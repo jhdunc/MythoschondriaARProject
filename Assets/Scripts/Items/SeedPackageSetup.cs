@@ -9,31 +9,40 @@ public class SeedPackageSetup : ItemClass
     public int seedMax;
     public Rigidbody rb;
     private SeedWorldScript seedWorld;
+    private GameObject seedPacks;
+    private GameObject seedSpawn;
 
-    
     void Start()
     {
         if(seedMax == 0)
-        { seedMax = 2; }
-
-
+        { seedMax = 3; }
 
         rb = GetComponentInChildren<Rigidbody>();
         interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
         GetComponentInChildren<XRGrabInteractable>().interactionManager = interactionManager;
+        seedPacks = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().itemList[itemID];
+        seedSpawn = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().spawnPoint[itemID];
 
-        rb.isKinematic = true;
-        rb.useGravity = false;
+        seedWorld = GetComponent<SeedWorldScript>();
+
+        rb.useGravity = true;
+        rb.isKinematic = false;
+
     }
 
     public void OnGrab()
     {
-        rb.isKinematic = false;
-        rb.useGravity = true;
+        Debug.Log("grabbed it!");
+        rb.constraints = RigidbodyConstraints.None;
+        NewSeedOnGrab();
         seedWorld.UpdateList();
+        seedWorld.ItemDestroy();
+
     }
 
-
-
+    public void NewSeedOnGrab()
+    {
+        GameObject instanceObject = GameObject.Instantiate(seedPacks, seedSpawn.transform.position, seedSpawn.transform.rotation);
+    }
 
 }

@@ -111,7 +111,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &3617071788232588751
 MonoBehaviour:
@@ -159,7 +159,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2265330622250996597}
         m_TargetAssemblyTypeName: SeedPackageSetup, Assembly-CSharp
-        m_MethodName: onGrab
+        m_MethodName: OnGrab
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -254,7 +254,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Seed Packet 1
   itemID: 1
-  seedMax: 2
+  seedMax: 3
   rb: {fileID: 0}
 --- !u!114 &35254248333601526
 MonoBehaviour:

@@ -111,7 +111,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &7697243814675838196
 MonoBehaviour:
@@ -159,7 +159,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2638247711133611154}
         m_TargetAssemblyTypeName: SeedPackageSetup, Assembly-CSharp
-        m_MethodName: onGrab
+        m_MethodName: OnGrab
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Seed Packet 8
   itemID: 8
-  seedMax: 2
+  seedMax: 3
   rb: {fileID: 0}
 --- !u!114 &3139429027563140443
 MonoBehaviour:
