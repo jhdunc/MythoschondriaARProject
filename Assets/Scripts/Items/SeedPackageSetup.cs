@@ -12,6 +12,8 @@ public class SeedPackageSetup : ItemClass
     private GameObject seedPacks;
     private GameObject seedSpawn;
 
+    public List<GameObject> growthStages = new List<GameObject>();
+
     void Start()
     {
         if(seedMax == 0)
