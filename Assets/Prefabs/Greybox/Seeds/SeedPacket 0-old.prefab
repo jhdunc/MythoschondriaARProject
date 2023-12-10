@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 4138498244684978720}
   - component: {fileID: 4983238014476688770}
   m_Layer: 0
-  m_Name: SeedPacket 0
+  m_Name: SeedPacket 0-old
   m_TagString: seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
