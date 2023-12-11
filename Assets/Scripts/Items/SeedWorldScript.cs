@@ -29,8 +29,9 @@ public class SeedWorldScript : MonoBehaviour
     }
     public void ItemDestroy()
     {
-        if (worldItemList.Count > seedMx)
+        while (worldItemList.Count > seedMx)
         {
+            UpdateList();
             tarItem = worldItemList[0];
             Destroy(tarItem);
         }

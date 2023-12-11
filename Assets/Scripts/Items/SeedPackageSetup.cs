@@ -37,7 +37,6 @@ public class SeedPackageSetup : ItemClass
         Debug.Log("grabbed it!");
         rb.constraints = RigidbodyConstraints.None;
         NewSeedOnGrab();
-        seedWorld.UpdateList();
         seedWorld.ItemDestroy();
 
     }
