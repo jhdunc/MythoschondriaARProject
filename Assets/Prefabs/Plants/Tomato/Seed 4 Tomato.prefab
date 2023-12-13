@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1909237970195564662}
-  - component: {fileID: 1743225946045771228}
+  - component: {fileID: 7770210089292863190}
   m_Layer: 0
-  m_Name: Empty
+  m_Name: Grab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 7392900200499590377}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1743225946045771228
+--- !u!65 &7770210089292863190
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,10 +55,10 @@ GameObject:
   - component: {fileID: 7392900200499590377}
   - component: {fileID: 4784089618011195989}
   - component: {fileID: 4477249287782960631}
-  - component: {fileID: 2235338390999005699}
-  - component: {fileID: 3224274151960086000}
+  - component: {fileID: 6448995890255556291}
+  - component: {fileID: 7355720893546689573}
   m_Layer: 0
-  m_Name: Seed 3 SugarBeet
+  m_Name: Seed 4 Tomato
   m_TagString: seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe3c2d3d2bcddf41a3d291f4896fef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Beet 01
-  itemID: 3
+  itemName: Tomato 01
+  itemID: 4
   seedMax: 3
   rb: {fileID: 0}
   growthStages: []
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemList: []
---- !u!54 &2235338390999005699
+--- !u!54 &6448995890255556291
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +124,9 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &3224274151960086000
+--- !u!114 &7355720893546689573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,9 +284,9 @@ GameObject:
   - component: {fileID: 5124268509365766842}
   - component: {fileID: 4530725266408537124}
   - component: {fileID: 5469150555244241147}
-  - component: {fileID: 3356211742324416837}
+  - component: {fileID: 5659436716637666895}
   m_Layer: 0
-  m_Name: SugarBeetBag
+  m_Name: TomatoBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: feacc70a6d325ac40ac6728cff56e5df, type: 2}
+  - {fileID: 2100000, guid: a5dbc80b69173d444979595eb56fcb48, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -355,7 +355,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3356211742324416837
+--- !u!64 &5659436716637666895
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,6 +366,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 7b2456a6a404a304cabcac3e415877c5, type: 3}

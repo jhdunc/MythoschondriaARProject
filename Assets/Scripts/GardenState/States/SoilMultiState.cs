@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoilSeededState : PlotBaseState
+public class SoilMultiState : PlotBaseState
 {
     public override void EnterState(PlotStateManager plot)
     {

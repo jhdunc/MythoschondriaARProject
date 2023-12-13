@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1047829344449691376
+--- !u!1 &2309278002403679574
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,93 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1909237970195564662}
-  - component: {fileID: 7770210089292863190}
+  - component: {fileID: 7447285006548327154}
+  - component: {fileID: 5551402914595021011}
+  - component: {fileID: 9114981872634171087}
+  - component: {fileID: 6139411291190896583}
   m_Layer: 0
-  m_Name: Grab
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1909237970195564662
+--- !u!4 &7447285006548327154
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047829344449691376}
-  m_LocalRotation: {x: 0.000000015454313, y: -0.70710677, z: 0.000000015454312, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_GameObject: {fileID: 2309278002403679574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0855, z: 0.0482}
+  m_LocalScale: {x: 0.1, y: 0.061374005, z: 0.038748}
   m_Children: []
   m_Father: {fileID: 7392900200499590377}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7770210089292863190
+--- !u!33 &5551402914595021011
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309278002403679574}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &9114981872634171087
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309278002403679574}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6139411291190896583
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047829344449691376}
+  m_GameObject: {fileID: 2309278002403679574}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0005840226, y: 0.0009446595, z: 0.0009237435}
-  m_Center: {x: 0.0003896333, y: 0.00084072415, z: 0.000005251765}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2414833852622305577
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,10 +106,10 @@ GameObject:
   - component: {fileID: 7392900200499590377}
   - component: {fileID: 4784089618011195989}
   - component: {fileID: 4477249287782960631}
-  - component: {fileID: 6448995890255556291}
-  - component: {fileID: 7355720893546689573}
+  - component: {fileID: 7667021829324657448}
+  - component: {fileID: 5310127648748771473}
   m_Layer: 0
-  m_Name: Seed 4 Tomato
+  m_Name: Seed 0 Carrot
   m_TagString: seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +127,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5124268509365766842}
-  - {fileID: 1909237970195564662}
+  - {fileID: 7447285006548327154}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe3c2d3d2bcddf41a3d291f4896fef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Tomato 01
-  itemID: 4
+  itemName: Carrot 01
+  itemID: 0
   seedMax: 3
   rb: {fileID: 0}
   growthStages: []
@@ -110,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemList: []
---- !u!54 &6448995890255556291
+--- !u!54 &7667021829324657448
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +175,9 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &7355720893546689573
+--- !u!114 &5310127648748771473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +278,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 1909237970195564662}
+  m_AttachTransform: {fileID: 7447285006548327154}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
@@ -284,9 +335,9 @@ GameObject:
   - component: {fileID: 5124268509365766842}
   - component: {fileID: 4530725266408537124}
   - component: {fileID: 5469150555244241147}
-  - component: {fileID: 5659436716637666895}
+  - component: {fileID: 1402736895403173859}
   m_Layer: 0
-  m_Name: TomatoBag
+  m_Name: CarrotBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +384,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5dbc80b69173d444979595eb56fcb48, type: 2}
+  - {fileID: 2100000, guid: 6f293259e9361984390a57d112851ae3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -355,7 +406,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5659436716637666895
+--- !u!64 &1402736895403173859
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,6 +417,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 7b2456a6a404a304cabcac3e415877c5, type: 3}

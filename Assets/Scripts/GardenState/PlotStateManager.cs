@@ -5,21 +5,15 @@ using UnityEngine;
 public class PlotStateManager : MonoBehaviour
 {
     PlotBaseState currentState;
-    public SoilUnreadyDryState UnreadyDryState = new SoilUnreadyDryState();
-    public SoilUnreadyWetState UnreadyWetState = new SoilUnreadyWetState();
-    public SoilReadyDryState ReadyDryState = new SoilReadyDryState();
-    public SoilReadyWetState ReadyWetState = new SoilReadyWetState();
-
-    public SoilSproutDryState SproutDryState = new SoilSproutDryState();
-    public SoilSproutWetState SproutWetState = new SoilSproutWetState();
-
-    public SoilPlantDryState PlantDryState = new SoilPlantDryState();
-    public SoilPlantWetState PlantWetState = new SoilPlantWetState();
-
+    public SoilEmptyState EmptyState = new SoilEmptyState();
+    public SoilSeededState SeededState = new SoilSeededState();
+    public SoilSproutState SproutState = new SoilSproutState();
+    public SoilGrowingState GrowingState = new SoilGrowingState();
+    public SoilMultiState MultiState = new SoilMultiState();
     public SoilHarvestState HarvestState = new SoilHarvestState();
     void Start()
     {
-        currentState = UnreadyDryState;
+        currentState = EmptyState;
 
         currentState.EnterState(this);
     }

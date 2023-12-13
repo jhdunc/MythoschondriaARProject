@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoilSproutState : MonoBehaviour
+public class SoilSproutState : PlotBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState(PlotStateManager plot)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    }
+    public override void UpdateState(PlotStateManager plot)
     {
-        
+
+    }
+    public override void OnCollisionEnter(PlotStateManager plot)
+    {
+
+    }
+    public override void OnSelectXR(PlotStateManager plot)
+    {
+
     }
 }
