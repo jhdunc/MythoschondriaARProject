@@ -7,7 +7,7 @@ public class SoilSeededState : PlotBaseState
     public override void EnterState(PlotStateManager plot)
     {
         Debug.Log("Seeded State Entered!");
-        GameObject instanceObject = GameObject.Instantiate(plot.GetComponent<PlantScript>().growthStages[0], plot.transform.position, plot.transform.rotation);
+        GameObject instanceObject = GameObject.Instantiate(plot.GetComponent<PlotScript>().growthStages[0], plot.transform.position, plot.transform.rotation);
     }
     public override void UpdateState(PlotStateManager plot)
     {

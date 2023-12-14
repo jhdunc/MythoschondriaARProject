@@ -9,8 +9,8 @@ public class SoilEmptyState : PlotBaseState
     public bool seeded;
     public override void EnterState(PlotStateManager plot)
     {
-        watered = plot.GetComponent<PlantScript>().watered;
-        ready = plot.GetComponent<PlantScript>().ready;
+        watered = plot.GetComponent<PlotScript>().watered;
+        ready = plot.GetComponent<PlotScript>().ready;
         Debug.Log("State: EmptyState (no plant!)");
         // Code goes here for anything that happens when the plant is removed
         // or when the game starts. UI popup maybe?
@@ -46,17 +46,17 @@ public class SoilEmptyState : PlotBaseState
                 switch (saveItemID)
                 {
                     case 100:
-                        plot.GetComponent<PlantScript>().ready = true;
+                        plot.GetComponent<PlotScript>().ready = true;
                         ready = true;
-                        plot.GetComponent<PlantScript>().growthStages = new List<GameObject>();
+                        plot.GetComponent<PlotScript>().growthStages = new List<GameObject>();
                         break;
                     case 101:
-                        plot.GetComponent<PlantScript>().ready = true;
+                        plot.GetComponent<PlotScript>().ready = true;
                         ready = true;
-                        plot.GetComponent<PlantScript>().growthStages = new List<GameObject>();
+                        plot.GetComponent<PlotScript>().growthStages = new List<GameObject>();
                         break;
                     case 102:
-                        plot.GetComponent<PlantScript>().watered = true;
+                        plot.GetComponent<PlotScript>().watered = true;
                         watered = true;
                         break;
                 }
@@ -72,10 +72,10 @@ public class SoilEmptyState : PlotBaseState
                     if (ready)
                     {
                         Debug.Log(otherObj);
-                        plot.GetComponent<PlantScript>().growthStages.Clear();
-                        plot.GetComponent<PlantScript>().growthStages.AddRange(otherObj.GetComponent<SeedPackageSetup>().growthStages);
+                        plot.GetComponent<PlotScript>().growthStages.Clear();
+                        plot.GetComponent<PlotScript>().growthStages.AddRange(otherObj.GetComponent<SeedPackageSetup>().growthStages);
                         Object.Destroy(otherObj);
-                        plot.GetComponent<PlantScript>().seeded = true;
+                        plot.GetComponent<PlotScript>().seeded = true;
                         seeded = true;
                     }
                 }
