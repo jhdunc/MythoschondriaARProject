@@ -29,4 +29,16 @@ public class PlotStateManager : MonoBehaviour
         currentState = state;
         state.EnterState(this);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        currentState.OnCollisionEnter(this, collision);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        currentState.OnTriggerEnter(this, other);
+    }
+
+    
 }

@@ -12,13 +12,12 @@ public class GameEvents : MonoBehaviour
         current = this;
     }
 
-    public event Action onSoilTill;
-
-    public void SoilTill()
+    public event Action onSoilUpdate;
+    public void SoilUpdate()
     {
-        if(onSoilTill != null)
+        if (onSoilUpdate != null)
         {
-            onSoilTill();
+            onSoilUpdate();
         }
     }
 }

@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4477249287782960631}
   - component: {fileID: 6448995890255556291}
   - component: {fileID: 7355720893546689573}
+  - component: {fileID: 5464388282710105895}
   m_Layer: 0
   m_Name: Seed 4 Tomato
   m_TagString: seed
@@ -96,7 +97,11 @@ MonoBehaviour:
   itemID: 4
   seedMax: 3
   rb: {fileID: 0}
-  growthStages: []
+  growthStages:
+  - {fileID: 8082267732391170120, guid: 16ac2c023c145374fa0ad73f468a0c6a, type: 3}
+  - {fileID: 8965540051554647299, guid: d292da60426688942b0a208db5524558, type: 3}
+  - {fileID: 6530220332509766697, guid: bfab5bb1224a0554f9d92e1ef60e44c8, type: 3}
+  - {fileID: 1241389830954247471, guid: c517e74f6ff9b4a4786a9abb5d1260b8, type: 3}
 --- !u!114 &4477249287782960631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +278,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!65 &5464388282710105895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414833852622305577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.18, z: 0.15}
+  m_Center: {x: 0, y: 0.077, z: 0}
 --- !u!1 &9181277699093939280
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +382,7 @@ MeshCollider:
   m_GameObject: {fileID: 9181277699093939280}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30

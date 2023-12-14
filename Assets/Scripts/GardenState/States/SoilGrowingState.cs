@@ -12,7 +12,11 @@ public class SoilGrowingState : PlotBaseState
     {
 
     }
-    public override void OnCollisionEnter(PlotStateManager plot)
+    public override void OnCollisionEnter(PlotStateManager plot, Collision collision)
+    {
+
+    }
+    public override void OnTriggerEnter(PlotStateManager plot, Collider other)
     {
 
     }

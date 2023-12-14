@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4477249287782960631}
   - component: {fileID: 6045689889278125223}
   - component: {fileID: 5179457398837019168}
+  - component: {fileID: 4615667419398249625}
   m_Layer: 0
   m_Name: Seed 1 Corn
   m_TagString: seed
@@ -217,6 +218,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!65 &4615667419398249625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414833852622305577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.18, z: 0.15}
+  m_Center: {x: 0, y: 0.077, z: 0}
 --- !u!1 &3498115561903094884
 GameObject:
   m_ObjectHideFlags: 0

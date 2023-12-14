@@ -36,12 +36,12 @@ public class SeedPackageSetup : ItemClass
     {
         Debug.Log("grabbed it!");
         rb.constraints = RigidbodyConstraints.None;
-        NewSeedOnGrab();
+        NewSeed();
         seedWorld.ItemDestroy();
 
     }
 
-    public void NewSeedOnGrab()
+    public void NewSeed()
     {
         GameObject instanceObject = GameObject.Instantiate(seedPacks, seedSpawn.transform.position, seedSpawn.transform.rotation);
     }
