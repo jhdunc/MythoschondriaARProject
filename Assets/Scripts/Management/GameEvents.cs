@@ -13,11 +13,20 @@ public class GameEvents : MonoBehaviour
     }
 
     public event Action onSoilUpdate;
+    public event Action onTimeSkip;
     public void SoilUpdate()
     {
         if (onSoilUpdate != null)
         {
             onSoilUpdate();
+        }
+    }
+
+    public void TimeSkip()
+    {
+        if (onTimeSkip != null)
+        {
+            onTimeSkip();
         }
     }
 }

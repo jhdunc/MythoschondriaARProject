@@ -19,7 +19,38 @@ public class PlotScript : MonoBehaviour
     private void Start()
     {
         GameEvents.current.onSoilUpdate += SoilUpdate;
+        GameEvents.current.onTimeSkip += TimeSkip;
     }
+
+    #region TimeUpdate
+    private void TimeSkip()
+    {
+        if (watered)
+        {
+            watered = false;
+            SoilUpdate();
+            string currentState = gameObject.GetComponent<PlotStateManager>().currentState.ToString();
+
+            Debug.Log(currentState);
+            switch (currentState)
+            {
+                case "SoilEmptyState" :
+                    break;
+                case "SoilSeededState":
+                    break;
+                case "SoilSproutState":
+                    break;
+                case "SoilGrowingState":
+                    break;
+                case "SoilRipeState":
+                    break;
+
+            }
+        }
+    }
+
+    #endregion
+    #region SoilUpdates
 
     private void SoilUpdate()
     {
@@ -36,7 +67,7 @@ public class PlotScript : MonoBehaviour
             EnableWetUnready();
         }
     }
-
+    
     void DisableAllSoil()
     {
         dryUnready.SetActive(false);
@@ -67,4 +98,5 @@ public class PlotScript : MonoBehaviour
         DisableAllSoil();
         dryUnready.SetActive(true);
     }
+    #endregion
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlotStateManager : MonoBehaviour
 {
-    PlotBaseState currentState;
+    public PlotBaseState currentState;
     public SoilEmptyState EmptyState = new SoilEmptyState();
     public SoilSeededState SeededState = new SoilSeededState();
     public SoilSproutState SproutState = new SoilSproutState();

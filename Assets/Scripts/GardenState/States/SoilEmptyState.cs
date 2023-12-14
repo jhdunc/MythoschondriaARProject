@@ -20,11 +20,9 @@ public class SoilEmptyState : PlotBaseState
 
         if (ready && watered && seeded)
         {
-            Debug.Log("ready!");
-            plot.SwitchState(plot.SeededState); }
+            plot.SwitchState(plot.SeededState); 
+        }
 
-
-        
     }
     public override void OnCollisionEnter(PlotStateManager plot, Collision collision)
     {

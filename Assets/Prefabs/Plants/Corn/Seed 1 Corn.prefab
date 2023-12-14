@@ -53,7 +53,8 @@ MonoBehaviour:
   itemID: 1
   seedMax: 3
   rb: {fileID: 0}
-  growthStages: []
+  growthStages:
+  - {fileID: 8082267732391170120, guid: 16ac2c023c145374fa0ad73f468a0c6a, type: 3}
 --- !u!114 &4477249287782960631
 MonoBehaviour:
   m_ObjectHideFlags: 0
