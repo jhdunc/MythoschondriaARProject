@@ -6,7 +6,7 @@ public class SoilHarvestState : PlotBaseState
 {
     public override void EnterState(PlotStateManager plot)
     {
-
+        Debug.Log("Harvest State Entered!");
     }
     public override void UpdateState(PlotStateManager plot)
     {

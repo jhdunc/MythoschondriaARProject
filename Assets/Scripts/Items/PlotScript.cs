@@ -15,7 +15,6 @@ public class PlotScript : MonoBehaviour
     public GameObject dryReady;
     public GameObject wetReady;
 
-
     private void Start()
     {
         GameEvents.current.onSoilUpdate += SoilUpdate;

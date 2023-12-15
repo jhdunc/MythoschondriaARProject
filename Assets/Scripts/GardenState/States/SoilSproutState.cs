@@ -6,7 +6,7 @@ public class SoilSproutState : PlotBaseState
 {
     public override void EnterState(PlotStateManager plot)
     {
-
+        Debug.Log("entered Sprout state");
     }
     public override void UpdateState(PlotStateManager plot)
     {

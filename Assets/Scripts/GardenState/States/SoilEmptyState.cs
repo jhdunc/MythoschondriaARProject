@@ -7,13 +7,47 @@ public class SoilEmptyState : PlotBaseState
     public bool watered;
     public bool ready;
     public bool seeded;
+    public GameObject stateList;
     public override void EnterState(PlotStateManager plot)
     {
-        watered = plot.GetComponent<PlotScript>().watered;
-        ready = plot.GetComponent<PlotScript>().ready;
-        Debug.Log("State: EmptyState (no plant!)");
+        stateList = GameObject.Find("StateListManager");
         // Code goes here for anything that happens when the plant is removed
         // or when the game starts. UI popup maybe?
+
+        // Check if GameObject contains the script for a Plot
+        // Then set variable to same value as Plot script
+        if (plot.GetComponent<PlotScript>() != null)
+        {
+            watered = plot.GetComponent<PlotScript>().watered;
+            ready = plot.GetComponent<PlotScript>().ready;
+        }
+        Debug.Log("State: EmptyState (no plant!)");
+        
+        // Setup State List prefab objects
+        #region Setup State List prefab objects
+        if (plot.gameObject.name == "PrefabEmptyState")
+        {
+            plot.SwitchState(plot.SproutState);
+        }
+        if (plot.gameObject.name == "PrefabSeededState")
+        {
+            plot.SwitchState(plot.SeededState);
+        }
+        if (plot.gameObject.name == "PrefabGrowingState")
+        {
+            plot.SwitchState(plot.GrowingState);
+        }
+        if (plot.gameObject.name == "PrefabMultiState")
+        {
+            plot.SwitchState(plot.MultiState);
+        }
+        if (plot.gameObject.name == "PrefabHarvestState")
+        {
+            plot.SwitchState(plot.HarvestState);
+        }
+        stateList.GetComponent<StateList>().readState = true;
+
+        #endregion
     }
     public override void UpdateState(PlotStateManager plot)
     {

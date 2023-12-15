@@ -11,6 +11,7 @@ public class PlotStateManager : MonoBehaviour
     public SoilGrowingState GrowingState = new SoilGrowingState();
     public SoilMultiState MultiState = new SoilMultiState();
     public SoilHarvestState HarvestState = new SoilHarvestState();
+
     void Start()
     {
         currentState = EmptyState;
