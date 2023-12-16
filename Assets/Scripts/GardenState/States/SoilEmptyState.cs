@@ -8,8 +8,10 @@ public class SoilEmptyState : PlotBaseState
     public bool ready;
     public bool seeded;
     public GameObject stateList;
+
     public override void EnterState(PlotStateManager plot)
     {
+        
         stateList = GameObject.Find("StateListManager");
         // Code goes here for anything that happens when the plant is removed
         // or when the game starts. UI popup maybe?
@@ -21,7 +23,6 @@ public class SoilEmptyState : PlotBaseState
             watered = plot.GetComponent<PlotScript>().watered;
             ready = plot.GetComponent<PlotScript>().ready;
         }
-        Debug.Log("State: EmptyState (no plant!)");
         
         // Setup State List prefab objects
         #region Setup State List prefab objects
@@ -45,15 +46,19 @@ public class SoilEmptyState : PlotBaseState
         {
             plot.SwitchState(plot.HarvestState);
         }
+        // bool: don't run the compilation of states in the Manager
+        // until all states have been assigned
         stateList.GetComponent<StateList>().readState = true;
 
         #endregion
     }
     public override void UpdateState(PlotStateManager plot)
     {
-
+        // if all 3 conditions met, remove condition "watered" and advance to next State
+        // Does not adhere to timer, as this is not a growth stage
         if (ready && watered && seeded)
         {
+            plot.GetComponent<PlotScript>().watered = false;
             plot.SwitchState(plot.SeededState); 
         }
 
@@ -64,34 +69,43 @@ public class SoilEmptyState : PlotBaseState
     }
     public override void OnTriggerEnter(PlotStateManager plot, Collider other)
     {
-
+        // check if object entering trigger area is a seed or a tool
         if (other.gameObject.tag == "seed" || other.gameObject.tag == "Tool")
         { 
-            GameObject otherObj = other.gameObject;
-            int saveItemID;
+            // save colliding object to a variable
             
+            GameObject otherObj = other.gameObject;
+           
+            // if player is holding a tool:
             if (otherObj.CompareTag("Tool"))
             {
-                // Tell the Plot what tool is being used
-              
-                saveItemID = otherObj.GetComponent<ToolScript>().itemID;
-                switch (saveItemID)
+                // set switch cases to tool ID numbers
+                
+                switch (otherObj.GetComponent<ToolScript>().itemID)
                 {
-                    case 100:
+                    case 100: // HOE
                         plot.GetComponent<PlotScript>().ready = true;
                         ready = true;
-                        plot.GetComponent<PlotScript>().growthStages = new List<GameObject>();
+                        
+                        // clear list of growth stages (saved seed information)
+                        plot.GetComponent<PlotScript>().growthStages.Clear();
                         break;
-                    case 101:
+
+                    case 101: // TROWEL
                         plot.GetComponent<PlotScript>().ready = true;
                         ready = true;
-                        plot.GetComponent<PlotScript>().growthStages = new List<GameObject>();
+                        
+                        // clear list of growth stages (saved seed information)
+                        plot.GetComponent<PlotScript>().growthStages.Clear();
                         break;
-                    case 102:
+
+                    case 102: // WATERING CAN
                         plot.GetComponent<PlotScript>().watered = true;
                         watered = true;
                         break;
                 }
+                // run game event for soil update script: checks variables and updates Soil image to match
+                // in prototype: color of the greybox soil ball
                 GameEvents.current.SoilUpdate();
 
 
@@ -103,10 +117,12 @@ public class SoilEmptyState : PlotBaseState
                 {
                     if (ready)
                     {
-                        Debug.Log(otherObj);
                         plot.GetComponent<PlotScript>().growthStages.Clear();
                         plot.GetComponent<PlotScript>().growthStages.AddRange(otherObj.GetComponent<SeedPackageSetup>().growthStages);
+                        
+                        // Destroy Seed object
                         Object.Destroy(otherObj);
+
                         plot.GetComponent<PlotScript>().seeded = true;
                         seeded = true;
                     }
@@ -116,10 +132,12 @@ public class SoilEmptyState : PlotBaseState
             }
         }
 
-        
-
     }
     public override void OnSelectXR(PlotStateManager plot)
+    {
+
+    }
+    public override void OnTimerCall(PlotStateManager plot)
     {
 
     }

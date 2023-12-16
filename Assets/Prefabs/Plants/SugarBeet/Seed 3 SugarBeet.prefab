@@ -55,7 +55,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   growthStages:
   - {fileID: 8082267732391170120, guid: 16ac2c023c145374fa0ad73f468a0c6a, type: 3}
-  - {fileID: 8965540051554647299, guid: d292da60426688942b0a208db5524558, type: 3}
+  - {fileID: 1023647553358089516, guid: 433a1458d575b8d4493aeb0b48096e61, type: 3}
+  - {fileID: 3249676870458338782, guid: d034985fa2f6927459c9a038fc308e86, type: 3}
+  - {fileID: 5363260490756505949, guid: 7f49340958904774cbcc40f19d270906, type: 3}
+  - {fileID: 7378416101038671254, guid: 3243816b755edb64baa81bf9a91e8ddd, type: 3}
 --- !u!114 &4477249287782960631
 MonoBehaviour:
   m_ObjectHideFlags: 0

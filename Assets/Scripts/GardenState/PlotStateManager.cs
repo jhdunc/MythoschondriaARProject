@@ -41,5 +41,6 @@ public class PlotStateManager : MonoBehaviour
         currentState.OnTriggerEnter(this, other);
     }
 
+
     
 }

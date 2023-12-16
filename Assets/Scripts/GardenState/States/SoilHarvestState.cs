@@ -25,4 +25,9 @@ public class SoilHarvestState : PlotBaseState
     {
 
     }
+
+    public override void OnTimerCall(PlotStateManager plot)
+    {
+
+    }
 }
