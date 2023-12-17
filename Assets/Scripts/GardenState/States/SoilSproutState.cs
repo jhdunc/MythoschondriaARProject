@@ -75,9 +75,10 @@ public class SoilSproutState : PlotBaseState
         // Destroy the plant
         // reset plot and move to next State
 
-        if (plot.currentState == this)
-        { 
-            Debug.Log("button Sprout"); 
+
+        if (currentPlot.currentState.ToString() == "SoilSproutState")
+        {
+            Debug.Log(plot + " button Sprout");
             if (watered)
             {
                 // Get name of growth stage 
@@ -92,12 +93,12 @@ public class SoilSproutState : PlotBaseState
 
             }
         }
+        else { Debug.Log(plot + " button sprout: else"); }
+
     }
     // Event for Time Advance Button
     public void TimeSkip()
     {
-
-            OnTimerCall(currentPlot);
-
+        OnTimerCall(currentPlot);
     }
 }

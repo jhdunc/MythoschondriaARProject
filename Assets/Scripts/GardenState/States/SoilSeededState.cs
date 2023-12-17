@@ -85,9 +85,10 @@ public class SoilSeededState : PlotBaseState
         
         if (plot.currentState.ToString() == "SoilSeededState")
         {
-            Debug.Log("button seed ");
+            Debug.Log(plot + " button seed");
             if (watered)
             {
+                
                 // Get name of growth stage 
                 string y = plot.GetComponent<PlotScript>().growthStages[0].name;
 
@@ -101,8 +102,9 @@ public class SoilSeededState : PlotBaseState
 
             }
         }
+        else { Debug.Log(plot + " button seed: else"); }
     }
-#endregion
+    #endregion
 
     // Event for Time Advance Button
     public void TimeSkip()
