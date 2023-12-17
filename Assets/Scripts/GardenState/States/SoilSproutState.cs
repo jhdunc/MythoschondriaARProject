@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class SoilSproutState : PlotBaseState
 {
+    // Variables to check plot status and assign plot to non-override code
+    public bool watered;
+    public bool ready;
+    public PlotStateManager currentPlot;
     public override void EnterState(PlotStateManager plot)
     {
-        Debug.Log("entered Sprout state");
+        Debug.Log("Sprout Entered!");
+
+        currentPlot = plot;
+        GameEvents.current.SoilUpdate();
+        GameEvents.current.onTimeSkip += TimeSkip;
+
         if (plot.GetComponent<PlotScript>() != null)
         {
-            // create game object of sprout from list growthStages
-            GameObject instanceObject = GameObject.Instantiate(plot.GetComponent<PlotScript>().growthStages[1], plot.GetComponent<PlotSpawn>().sproutSpawn.transform.position, plot.GetComponent<PlotSpawn>().signSpawn.transform.rotation);
+            GameObject instanceObject = GameObject.Instantiate(plot.GetComponent<PlotScript>().growthStages[1], plot.GetComponent<PlotSpawn>().sproutSpawn.transform, worldPositionStays: false);
         }
     }
     public override void UpdateState(PlotStateManager plot)
@@ -31,7 +39,15 @@ public class SoilSproutState : PlotBaseState
     }
     public override void OnTimerCall(PlotStateManager plot)
     {
+        Debug.Log("pushed button");
+        if (watered)
+        {
 
+        }
     }
-
+    // Event for Time Advance Button
+    public void TimeSkip()
+    {
+        OnTimerCall(currentPlot);
+    }
 }

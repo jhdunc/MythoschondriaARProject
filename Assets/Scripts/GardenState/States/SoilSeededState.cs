@@ -12,13 +12,19 @@ public class SoilSeededState : PlotBaseState
     #region Override States (Things that Do Stuff)
     public override void EnterState(PlotStateManager plot)
     {
-        currentPlot = plot;
         Debug.Log("Seeded State Entered!");
+
+        currentPlot = plot;
+        GameEvents.current.SoilUpdate();
+        GameEvents.current.onTimeSkip += TimeSkip;
+
         if (plot.GetComponent<PlotScript>() != null)
         {
-            GameObject instanceObject = GameObject.Instantiate(plot.GetComponent<PlotScript>().growthStages[0], plot.GetComponent<PlotSpawn>().signSpawn.transform.position, plot.GetComponent<PlotSpawn>().signSpawn.transform.rotation);
+            /*GameObject instanceObject = GameObject.Instantiate(plot.GetComponent<PlotScript>().growthStages[0], plot.GetComponent<PlotSpawn>().signSpawn.transform.position, plot.GetComponent<PlotSpawn>().signSpawn.transform.rotation);*/
+            GameObject instanceObject = GameObject.Instantiate(plot.GetComponent<PlotScript>().growthStages[0], plot.GetComponent<PlotSpawn>().signSpawn.transform, worldPositionStays:false) ;
         }
-        GameEvents.current.onTimeSkip += TimeSkip;
+
+
     }
     public override void UpdateState(PlotStateManager plot)
     {
@@ -73,7 +79,10 @@ public class SoilSeededState : PlotBaseState
         Debug.Log("pushed button");
         if (watered)
         {
-
+            Transform x = plot.transform.Find("SpawnPoints/SeedSign/Seeded(Clone)");
+            Object.Destroy(x.gameObject);
+            plot.GetComponent<PlotScript>().watered = false;
+            plot.SwitchState(plot.SproutState);
         }
     }
 #endregion
