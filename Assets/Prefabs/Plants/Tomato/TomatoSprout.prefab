@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tomato Sprout
   itemID: 14
+  growTime: 0
   scaleGrow: 1
-  hasMulti: 0
+  hasMulti: 1
   stage: 1
