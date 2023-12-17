@@ -134,11 +134,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7384346898384016353}
-  - component: {fileID: 2053006989597024530}
   - component: {fileID: 2504836958007545154}
   - component: {fileID: 2845528964001547129}
   m_Layer: 0
-  m_Name: CarrotRipe
+  m_Name: CarrotGrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,19 +159,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2053006989597024530
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062466102227626433}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.24411757, z: 0.1}
-  m_Center: {x: 0, y: 0.07205879, z: 0}
 --- !u!54 &2504836958007545154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,7 +173,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2845528964001547129
 MonoBehaviour:
