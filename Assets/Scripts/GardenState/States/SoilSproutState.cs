@@ -11,7 +11,6 @@ public class SoilSproutState : PlotBaseState
     public override void EnterState(PlotStateManager plot)
     {
         Debug.Log("Sprout Entered!");
-
         currentPlot = plot;
         GameEvents.current.SoilUpdate();
         GameEvents.current.onTimeSkip += TimeSkip;
@@ -31,7 +30,38 @@ public class SoilSproutState : PlotBaseState
     }
     public override void OnTriggerEnter(PlotStateManager plot, Collider other)
     {
+        if (other.gameObject.tag == "seed" || other.gameObject.tag == "Tool")
+        {
+            GameObject otherObj = other.gameObject;
+            int saveItemID;
 
+            if (otherObj.CompareTag("Tool"))
+            {
+                // Tell the Plot what tool is being used
+
+                saveItemID = otherObj.GetComponent<ToolScript>().itemID;
+                switch (saveItemID)
+                {
+                    case 100:
+                        plot.GetComponent<PlotScript>().ready = true;
+                        ready = true;
+                        plot.GetComponent<PlotScript>().growthStages = new List<GameObject>();
+                        plot.SwitchState(plot.EmptyState);
+                        break;
+                    case 101:
+                        plot.GetComponent<PlotScript>().ready = true;
+                        ready = true;
+                        plot.GetComponent<PlotScript>().growthStages = new List<GameObject>();
+                        plot.SwitchState(plot.EmptyState);
+                        break;
+                    case 102:
+                        plot.GetComponent<PlotScript>().watered = true;
+                        watered = true;
+                        break;
+                }
+                GameEvents.current.SoilUpdate();
+            }
+        }
     }
     public override void OnSelectXR(PlotStateManager plot)
     {
@@ -39,15 +69,35 @@ public class SoilSproutState : PlotBaseState
     }
     public override void OnTimerCall(PlotStateManager plot)
     {
-        Debug.Log("pushed button");
-        if (watered)
-        {
+        // Execute this code when button pressed (Time Advance)
+        // General Function Flow:
+        // Get the Plant's game object information
+        // Destroy the plant
+        // reset plot and move to next State
 
+        if (plot.currentState == this)
+        { 
+            Debug.Log("button Sprout"); 
+            if (watered)
+            {
+                // Get name of growth stage 
+                string y = plot.GetComponent<PlotScript>().growthStages[1].name;
+
+                // set x variable to the plant's game object
+                Transform x = plot.transform.Find($"SpawnPoints/Sprout/{y}(Clone)");
+                Object.Destroy(x.gameObject);
+
+                plot.GetComponent<PlotScript>().watered = false;
+                plot.SwitchState(plot.GrowingState);
+
+            }
         }
     }
     // Event for Time Advance Button
     public void TimeSkip()
     {
-        OnTimerCall(currentPlot);
+
+            OnTimerCall(currentPlot);
+
     }
 }

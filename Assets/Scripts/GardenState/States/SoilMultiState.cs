@@ -43,7 +43,7 @@ public class SoilMultiState : PlotBaseState
     {
         if (watered)
         {
-            Transform x = plot.transform.Find($"SpawnPoints/SeedSign/{plot.GetComponent<PlotScript>().growthStages[0].ToString()}(Clone)");
+            Transform x = plot.transform.Find($"SpawnPoints/SeedSign/{plot.GetComponent<PlotScript>().growthStages[4].ToString()}(Clone)");
             Object.Destroy(x.gameObject);
             plot.GetComponent<PlotScript>().watered = false;
             plot.SwitchState(plot.SproutState);

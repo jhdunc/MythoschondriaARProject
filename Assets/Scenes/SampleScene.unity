@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soil Plot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
       propertyPath: m_RootOrder
@@ -380,6 +385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Soil Plot (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
@@ -880,7 +890,7 @@ GameObject:
   - component: {fileID: 341871684}
   - component: {fileID: 341871688}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: HOE (Cube)
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,8 +904,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341871682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.31, y: -0.622, z: 0.638}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: -0.622, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.29157}
   m_Children: []
   m_Father: {fileID: 1335363640}
   m_RootOrder: 0
@@ -925,7 +935,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 3.5, y: 3.5, z: 3.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &341871686
 MeshRenderer:
@@ -946,7 +956,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 40b36c89e8729b841a31447644999e61, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1003,6 +1013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Soil Plot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
@@ -1467,6 +1482,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soil Plot
       objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
       propertyPath: m_RootOrder
@@ -1753,6 +1773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Soil Plot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
@@ -2837,7 +2862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335363640}
   m_Layer: 0
-  m_Name: PLACEHOLDER
+  m_Name: FAKE TOOLS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2851,11 +2876,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335363639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.82172614, y: 1.2975588, z: 0.031844497}
+  m_LocalPosition: {x: 0.309, y: 1.2975588, z: 0.838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 341871683}
   - {fileID: 1580310475}
+  - {fileID: 1749759136}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3004,6 +3030,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Soil Plot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
@@ -3709,7 +3740,7 @@ GameObject:
   - component: {fileID: 1580310476}
   - component: {fileID: 1580310480}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: WATER (Sphere)
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3723,8 +3754,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580310474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62, y: -0.478, z: 0.75}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0.054, y: -0.622, z: 0.354}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.29157}
   m_Children: []
   m_Father: {fileID: 1335363640}
   m_RootOrder: 1
@@ -3741,7 +3772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Watering Can
   itemID: 102
 --- !u!135 &1580310477
 SphereCollider:
@@ -3754,7 +3785,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1580310478
 MeshRenderer:
@@ -3775,7 +3806,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2977ce7f3a820904ebc8b0edfbbd1936, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4221,6 +4252,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soil Plot (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
       propertyPath: m_RootOrder
@@ -4293,6 +4329,134 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e971ad2ed0ac9640acbb4af1ff26146, type: 3}
+--- !u!1 &1749759135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749759136}
+  - component: {fileID: 1749759141}
+  - component: {fileID: 1749759140}
+  - component: {fileID: 1749759139}
+  - component: {fileID: 1749759138}
+  - component: {fileID: 1749759137}
+  m_Layer: 0
+  m_Name: TROWEL (Cylinder)
+  m_TagString: Tool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749759136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749759135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.622, z: -0.34399986}
+  m_LocalScale: {x: 0.3, y: 0.15, z: 0.3}
+  m_Children: []
+  m_Father: {fileID: 1335363640}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1749759137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749759135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Trowel
+  itemID: 101
+--- !u!54 &1749759138
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749759135}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &1749759139
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749759135}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.5
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1749759140
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749759135}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6c0410eeda5d79942b94ac4793f72b5d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1749759141
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749759135}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1774974908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4538,6 +4702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Soil Plot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767169584605538016, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7767169584605538019, guid: 6e971ad2ed0ac9640acbb4af1ff26146,
         type: 3}
@@ -5199,7 +5368,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 952fc4e977238844b9f4ecc22b24e55f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

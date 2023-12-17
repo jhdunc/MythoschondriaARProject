@@ -11,6 +11,7 @@ public class SoilEmptyState : PlotBaseState
 
     public override void EnterState(PlotStateManager plot)
     {
+
         
         stateList = GameObject.Find("StateListManager");
         // Code goes here for anything that happens when the plant is removed
