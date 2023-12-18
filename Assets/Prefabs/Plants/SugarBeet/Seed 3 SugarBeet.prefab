@@ -191,7 +191,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 8028374508376096752}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
+  m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -274,13 +274,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5305637332303176377}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.9957005, z: -0, w: -0.09263129}
   m_LocalPosition: {x: 0, y: 0.0855, z: 0.0482}
   m_LocalScale: {x: 0.099999994, y: 0.06137, z: 0.03875}
   m_Children: []
   m_Father: {fileID: 7392900200499590377}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 190.63, z: 0}
 --- !u!33 &370754478200220556
 MeshFilter:
   m_ObjectHideFlags: 0
