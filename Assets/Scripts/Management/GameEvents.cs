@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameEvents : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameEvents : MonoBehaviour
     }
 
     public event Action onSoilUpdate;
+    public event Action onWatered;
+
     public event Action onTimeSkip;
     public void SoilUpdate()
     {
@@ -28,5 +31,11 @@ public class GameEvents : MonoBehaviour
         {
             onTimeSkip();
         }
+    }
+
+    public void Watered()
+    {
+        if (onWatered != null)
+            onWatered();
     }
 }

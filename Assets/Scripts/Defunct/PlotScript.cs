@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlotScript : MonoBehaviour
 {
     public bool ready;
@@ -18,11 +19,15 @@ public class PlotScript : MonoBehaviour
     private void Start()
     {
         GameEvents.current.onSoilUpdate += SoilUpdate;
-        
+        GameEvents.current.onWatered += Watered;
     }
 
     #region TimeUpdate
 
+    private void Watered()
+    {
+
+    }    
 
     #endregion
     #region SoilUpdates
