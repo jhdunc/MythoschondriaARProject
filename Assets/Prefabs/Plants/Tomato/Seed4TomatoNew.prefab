@@ -230,8 +230,8 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SeedPackageSetup, Assembly-CSharp
+      - m_Target: {fileID: 2840973455857034779}
+        m_TargetAssemblyTypeName: SeedInfo, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 1
         m_Arguments:

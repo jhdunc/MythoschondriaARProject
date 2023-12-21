@@ -52,7 +52,7 @@ MonoBehaviour:
   sprout: {fileID: 959853897036329514}
   growing: {fileID: 3141799429485021134}
   harvest: {fileID: 6918554172877784380}
-  growTime: 0
+  growTime: 15
 --- !u!135 &8158808541799005532
 SphereCollider:
   m_ObjectHideFlags: 0

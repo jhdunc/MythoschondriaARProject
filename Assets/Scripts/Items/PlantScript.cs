@@ -88,6 +88,7 @@ public class PlantScript : MonoBehaviour
     {
         if (watered == true)
         {
+            watered = false;
             yield return new WaitForSeconds(growTime);
             if (currentState == GrowthState.Seeded)
                 ChangeState(GrowthState.Sprout);
@@ -95,7 +96,7 @@ public class PlantScript : MonoBehaviour
                 ChangeState(GrowthState.Growing);
             else if (currentState == GrowthState.Growing)
             { ChangeState(GrowthState.Harvest); }
-            watered = false;
+            
         }
 
     }

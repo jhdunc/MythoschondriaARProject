@@ -51,7 +51,7 @@ MonoBehaviour:
   sprout: {fileID: 6193392942703151243}
   growing: {fileID: 413411993772217775}
   harvest: {fileID: 6816365319874513597}
-  growTime: 30
+  growTime: 5
 --- !u!1001 &854349103180030486
 PrefabInstance:
   m_ObjectHideFlags: 0

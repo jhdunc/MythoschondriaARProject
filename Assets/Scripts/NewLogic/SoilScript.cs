@@ -7,12 +7,12 @@ public class SoilScript : MonoBehaviour
 {
     public GameObject enterState;
     public GameObject tilledState;
-    public GameObject plantSpawn;
 
     public Color dryColor;
     public Color wetColor;
 
     private bool tilled;
+    private bool plotFull;
     private void Start()
     {
         enterState.SetActive(enabled);
@@ -36,12 +36,14 @@ public class SoilScript : MonoBehaviour
                         enterState.SetActive(false);
                         tilledState.SetActive(true);
                         tilled = true;
+                        plotFull = false;
                         break;
                     case 101:
                         Debug.Log("Trowel has been used");
                         enterState.SetActive(false);
                         tilledState.SetActive(true);
                         tilled = true;
+                        plotFull = false;
                         break;
                     case 102:
                         Debug.Log("Water has been used");
@@ -54,8 +56,9 @@ public class SoilScript : MonoBehaviour
             if (otherObj.CompareTag("seed"))
             {
                 // Tell the Plot what seed is being planted
-                if (tilled == true)
+                if (tilled == true && !plotFull)
                 {
+                    plotFull = true;
                     GameObject instanceObject = GameObject.Instantiate(otherObj.GetComponent<SeedInfo>().plantPrefab, gameObject.transform, worldPositionStays: false);
                     Destroy(otherObj);
                     enterState.GetComponent<Renderer>().material.color = dryColor;

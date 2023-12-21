@@ -51,7 +51,7 @@ MonoBehaviour:
   sprout: {fileID: 7054368069789222154}
   growing: {fileID: 7234956657848179155}
   harvest: {fileID: 3506284813782834236}
-  growTime: 30
+  growTime: 5
 --- !u!1001 &460863868602724370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 7062466102227626433, guid: d9645933f441f4d42ae31c057e7f44ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7384346898384016353, guid: d9645933f441f4d42ae31c057e7f44ac,
         type: 3}
@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 7062466102227626433, guid: 971c575a3e7be3f41b14171c8c5a5500,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7384346898384016353, guid: 971c575a3e7be3f41b14171c8c5a5500,
         type: 3}
