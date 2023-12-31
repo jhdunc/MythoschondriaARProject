@@ -34,10 +34,18 @@ public class SeedPackageSetup : ItemClass
 
     public void OnGrab()
     {
-        Debug.Log("grabbed it!");
-        rb.constraints = RigidbodyConstraints.None;
-        NewSeed();
-        seedWorld.ItemDestroy();
+        if (seedWorld.cleanup == false)
+        {
+            Debug.Log("grabbed it!");
+            rb.constraints = RigidbodyConstraints.None;
+            seedWorld.ItemDestroy();
+            NewSeed();
+        }
+        else
+        {
+            // UNFINISHED
+            // input "can't grab" message/function/etc
+        }
 
     }
 
