@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1678673516667984617}
   - component: {fileID: 7450633766485876951}
+  - component: {fileID: 4230755573475465137}
   m_Layer: 0
   m_Name: PotatoPrefab
   m_TagString: Untagged
@@ -52,6 +53,19 @@ MonoBehaviour:
   growing: {fileID: 413411993772217775}
   harvest: {fileID: 6816365319874513597}
   growTime: 5
+--- !u!135 &4230755573475465137
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041973173418555596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &854349103180030486
 PrefabInstance:
   m_ObjectHideFlags: 0

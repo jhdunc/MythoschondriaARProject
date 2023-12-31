@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6394649426454118002}
   - component: {fileID: 8513876251638206703}
+  - component: {fileID: 1140890153206882440}
   m_Layer: 0
   m_Name: CarrotPrefab
   m_TagString: Untagged
@@ -52,6 +53,19 @@ MonoBehaviour:
   growing: {fileID: 7234956657848179155}
   harvest: {fileID: 3506284813782834236}
   growTime: 5
+--- !u!135 &1140890153206882440
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619039765839263169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &460863868602724370
 PrefabInstance:
   m_ObjectHideFlags: 0

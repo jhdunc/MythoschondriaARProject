@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2945783278347881971}
   - component: {fileID: 3089918441901582730}
+  - component: {fileID: 4922612587778610223}
   m_Layer: 0
   m_Name: SugarBeetPrefab
   m_TagString: Untagged
@@ -52,6 +53,19 @@ MonoBehaviour:
   growing: {fileID: 964308680444791219}
   harvest: {fileID: 743096917856213832}
   growTime: 10
+--- !u!135 &4922612587778610223
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881470689603173720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &13575160503589774
 PrefabInstance:
   m_ObjectHideFlags: 0
