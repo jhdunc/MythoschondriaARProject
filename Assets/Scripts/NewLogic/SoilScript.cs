@@ -5,64 +5,91 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
+    // game objects for tilled vs not tilled ground so that the object switches when tool used.
     public GameObject enterState;
     public GameObject tilledState;
 
+    // colors for whether or not the ground/plant has been watered, set in the inspector.
     public Color dryColor;
     public Color wetColor;
 
+    // bools to control whether or not actions can be taken based on current plot state
     private bool tilled;
     private bool plotFull;
     private void Start()
     {
-        enterState.SetActive(enabled);
+        // when plot is created, set default state to untilled and make tilled inactive.
+        enterState.SetActive(true);
+        tilledState.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
+        // on a collision with the soil's trigger collision box, 
+        // if the game object has the tag "seed" or "Tool" 
         if (other.gameObject.tag == "seed" || other.gameObject.tag == "Tool")
         {
+            // set variable for the colliding object as a local variable
+            // set up a local variable to hold the colliding item's ID# to identify what the tool is
             GameObject otherObj = other.gameObject;
             int saveItemID;
 
+            // if the colliding object's tag is Tool
             if (otherObj.CompareTag("Tool"))
             {
                 // Tell the Plot what tool is being used
+                // by setting the local variable saveItemID to the colliding object's ID#
 
                 saveItemID = otherObj.GetComponent<ToolScript>().itemID;
+
+                // use switch cases to determine what happens based on that tool's item ID
                 switch (saveItemID)
                 {
-                    case 100:
-                        Debug.Log("Hoe has been used");
-                        enterState.SetActive(false);
-                        tilledState.SetActive(true);
-                        tilled = true;
-                        plotFull = false;
+                    case 100: // if item is a Hoe:
+                        Debug.Log("Hoe has been used"); // debug to confirm Hoe recognition working
+                        enterState.SetActive(false); // deactivate the tilled soil game object
+                        tilledState.SetActive(true); // set tilled soil game object to active
+                        
+                        tilled = true; // set bool to indicate the soil has been tilled
+                        plotFull = false; // set bool to indicate there is no longer a plant here
+
+                        // code to destroy plant is in PlantScript.cs
                         break;
-                    case 101:
-                        Debug.Log("Trowel has been used");
-                        enterState.SetActive(false);
-                        tilledState.SetActive(true);
-                        tilled = true;
-                        plotFull = false;
+
+                    case 101: // if item is a Trowel
+                        Debug.Log("Trowel has been used"); // debug to confirm Trowel recognition working
+                        enterState.SetActive(false); // deactivate the tilled soil game object
+                        tilledState.SetActive(true); // set tilled soil game object to active
+
+                        tilled = true; // set bool to indicate the soil has been tilled
+                        plotFull = false; // set bool to indicate there is no longer a plant here
+
+                        // code to destroy plant is in PlantScript.cs
+                        // case currently the same as HOE
                         break;
-                    case 102:
-                        Debug.Log("Water has been used");
-                        enterState.GetComponent<Renderer>().material.color = wetColor;
-                        tilledState.GetComponent<Renderer>().material.color = wetColor;
+
+                    case 102: // if item is a Watering Can
+                        Debug.Log("Water has been used"); // debug to confirm WateringCan recognition working
+                        enterState.GetComponent<Renderer>().material.color = wetColor; // set color of untilled to wet
+                        tilledState.GetComponent<Renderer>().material.color = wetColor; // set color of tilled to wet
                         break;
                 }
 
             }
+            // if the colliding object's tag is "seed"
             if (otherObj.CompareTag("seed"))
             {
                 // Tell the Plot what seed is being planted
-                if (tilled == true && !plotFull)
+                if (tilled == true && !plotFull) // check that the soil has been tilled and does not already have a plant growing
                 {
-                    plotFull = true;
+                    plotFull = true; // switch bool to indicate a plant is now growing in the soil
+                    
+                    // create instance of the plant that the seed should grow
+                    // code means: Make a Game Object(get the variable plantPrefab from SeedInfo attached to colliding object, make the object of this script the parent, set location relative to parent)
                     GameObject instanceObject = GameObject.Instantiate(otherObj.GetComponent<SeedInfo>().plantPrefab, gameObject.transform, worldPositionStays: false);
-                    Destroy(otherObj);
-                    enterState.GetComponent<Renderer>().material.color = dryColor;
-                    tilledState.GetComponent<Renderer>().material.color = dryColor;
+
+                    Destroy(otherObj); // destroy the seed GameObject
+                    enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
+                    tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
                 }
             }
         }
