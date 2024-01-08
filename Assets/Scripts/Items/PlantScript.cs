@@ -10,6 +10,7 @@ enum GrowthState
 
 public class PlantScript : MonoBehaviour
 {
+    public int id;
     
     private GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
@@ -54,6 +55,8 @@ public class PlantScript : MonoBehaviour
     }
     void Start()
     {
+        id = transform.parent.GetComponent<SoilScript>().id;
+        Debug.Log("Parent ID = " + id) ;
         ChangeState(GrowthState.Seeded); // when instantiated, change growth state to Seeded
         GameEvents.current.onWatered += Watered; // still deciding on whether or not to use events for watering
 
@@ -109,17 +112,28 @@ public class PlantScript : MonoBehaviour
     private IEnumerator GrowthCycle() // a coroutine to start the growth period for the plant
     {
         growthActive = true; // set bool to indicate plant is now growing
-            yield return new WaitForSeconds(growTime); // wait a number of seconds equal to the variable growTime
+        yield return new WaitForSeconds(growTime); // wait a number of seconds equal to the variable growTime
 
         // once timer has elapsed, check current state and advance to the next state.
-            if (currentState == GrowthState.Seeded)
-                ChangeState(GrowthState.Sprout);
-            else if (currentState == GrowthState.Sprout)
-                ChangeState(GrowthState.Growing);
-            else if (currentState == GrowthState.Growing)
-            { ChangeState(GrowthState.Harvest); }
-            
+        if (currentState == GrowthState.Seeded)
+        {
+            ChangeState(GrowthState.Sprout);
+            GameEvents.current.SoilDry(id);
+        }
+        else if (currentState == GrowthState.Sprout)
+        {
+            ChangeState(GrowthState.Growing);
+            GameEvents.current.SoilDry(id);
+        }
+        else if (currentState == GrowthState.Growing)
+        {
+            ChangeState(GrowthState.Harvest);
+            GameEvents.current.SoilDry(id);
+        }
+
+
     }
+
     public void Watered()
     {
         // watered event?

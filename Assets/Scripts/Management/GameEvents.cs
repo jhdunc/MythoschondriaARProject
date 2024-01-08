@@ -12,11 +12,18 @@ public class GameEvents : MonoBehaviour
     {
         current = this;
     }
-
     public event Action onSoilUpdate;
+    public event Action<int> onSoilDry;
     public event Action onWatered;
 
     public event Action onTimeSkip;
+    public void SoilDry(int id)
+    {
+        if (onSoilDry != null)
+        {
+            onSoilDry(id);
+        }
+    }
     public void SoilUpdate()
     {
         if (onSoilUpdate != null)

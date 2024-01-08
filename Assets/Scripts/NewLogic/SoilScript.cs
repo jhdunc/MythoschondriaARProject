@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
+    public int id;
     // game objects for tilled vs not tilled ground so that the object switches when tool used.
     public GameObject enterState;
     public GameObject tilledState;
@@ -18,6 +19,9 @@ public class SoilScript : MonoBehaviour
     private bool plotFull;
     private void Start()
     {
+        // subscribe to EVENT: SoilDry
+        GameEvents.current.onSoilDry += SoilDry;
+
         // when plot is created, set default state to untilled and make tilled inactive.
         enterState.SetActive(true);
         tilledState.SetActive(false);
@@ -94,5 +98,12 @@ public class SoilScript : MonoBehaviour
             }
         }
     }
-
+    private void SoilDry(int id)
+    {
+        if(id == this.id)
+        { 
+        enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
+        tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
+        }
+    }
 }
