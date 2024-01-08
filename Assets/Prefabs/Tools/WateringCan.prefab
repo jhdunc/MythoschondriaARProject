@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 871839484026755913}
   - component: {fileID: 6122638251408435634}
   - component: {fileID: 5368876338799849024}
+  - component: {fileID: 7219969446704695666}
   m_Layer: 0
   m_Name: WateringCan
   m_TagString: Untagged
@@ -265,6 +266,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!136 &7219969446704695666
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664529848673811100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 3.71
+  m_Direction: 0
+  m_Center: {x: 3.81, y: 0.79, z: -0.12}
 --- !u!1 &7990186385848433676
 GameObject:
   m_ObjectHideFlags: 0

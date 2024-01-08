@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
-    public int id;
+    public int id; // set in inspector - specific to plot
+
     // game objects for tilled vs not tilled ground so that the object switches when tool used.
     public GameObject enterState;
     public GameObject tilledState;
@@ -105,5 +106,10 @@ public class SoilScript : MonoBehaviour
         enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
         tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
         }
+    }
+    private void OnDestroy()
+    {
+        // if this object is destroyed, unsubscribe from the event
+        GameEvents.current.onSoilDry -= SoilDry;
     }
 }

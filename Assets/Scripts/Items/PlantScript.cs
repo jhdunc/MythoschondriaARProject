@@ -10,7 +10,7 @@ enum GrowthState
 
 public class PlantScript : MonoBehaviour
 {
-    public int id;
+    private int id;
     
     private GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
@@ -20,9 +20,26 @@ public class PlantScript : MonoBehaviour
     public GameObject growing;
     public GameObject harvest;
 
+    private Vector3 growSproutScalar;
+
     public float growTime; // how long it takes this plant to grow per state
 
     private bool growthActive = false; // read whether or not the plant is currently growing, default false
+    void Start()
+    {
+        sprout.transform.localScale = new Vector3(.4f, .4f, 4f);
+        id = transform.parent.GetComponent<SoilScript>().id;
+        Debug.Log("Parent ID = " + id);
+
+        ChangeState(GrowthState.Seeded); // when instantiated, change growth state to Seeded
+
+        // check to make sure a grow time is set in the inspector
+        // if no grow time is set, default is 30
+        if (growTime == 0)
+            growTime = 30f;
+
+        growSproutScalar = new Vector3(0.1f, 0.1f, 0.1f);
+    }
     void ChangeState(GrowthState newState) // a method to call when changing the plant's state. When called, will use one of the enum list things as the newState
     {
         currentState = newState; // set current state to the paramater used to call the method
@@ -52,19 +69,6 @@ public class PlantScript : MonoBehaviour
             default:
                 break;
         }
-    }
-    void Start()
-    {
-        id = transform.parent.GetComponent<SoilScript>().id;
-        Debug.Log("Parent ID = " + id) ;
-        ChangeState(GrowthState.Seeded); // when instantiated, change growth state to Seeded
-        GameEvents.current.onWatered += Watered; // still deciding on whether or not to use events for watering
-
-        // check to make sure a grow time is set in the inspector
-        // if no grow time is set, default is 30
-        if (growTime == 0)
-            growTime = 30f;
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,7 +104,7 @@ public class PlantScript : MonoBehaviour
                     case 102:
                         Debug.Log("Water has been used"); // debug to confirm Watering Can recognition working
                         if (!growthActive) // if the plant is not currently growing, then start growing.
-                            StartCoroutine(GrowthCycle()); // start coroutine that will change the growth state
+                        StartCoroutine(GrowthCycle()); // start coroutine that will change the growth state
                         break;
                 }
 
@@ -130,16 +134,21 @@ public class PlantScript : MonoBehaviour
             ChangeState(GrowthState.Harvest);
             GameEvents.current.SoilDry(id);
         }
-
-
     }
-
-    public void Watered()
+    private void Update()
     {
-        // watered event?
+        if (growthActive)
+        {
+            switch (currentState)
+            {
+                case GrowthState.Sprout:
+                    if (sprout.transform.localScale.x < 1)
+                    {
+                        sprout.transform.localScale += growSproutScalar * Time.deltaTime;
+                    }
+                    break;
+            }
+        }
     }
-    public void Tilled()
-    {
-        // tilled event?
-    }
+
 }

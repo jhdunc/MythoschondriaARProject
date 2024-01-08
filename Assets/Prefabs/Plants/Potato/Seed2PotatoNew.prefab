@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6712693bd8eb5aa4888fbee1adb1e73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Potato Seed
   itemID: 2
   seedMax: 3
   rb: {fileID: 0}
@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemList: []
+  cleanup: 0
 --- !u!54 &3696902673877679193
 Rigidbody:
   m_ObjectHideFlags: 0
