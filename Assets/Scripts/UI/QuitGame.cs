@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonInteractions : MonoBehaviour
+public class QuitGame : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,11 @@ public class ButtonInteractions : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Quitgame()
+    {
+        Debug.Log("quit game");
+        Application.Quit();
     }
 }
