@@ -20,11 +20,14 @@ public class PlantScript : MonoBehaviour
     public GameObject growing;
     public GameObject harvest;
 
+    [SerializeField] GameObject timerPrefab;
+
     private Vector3 growSproutScalar;
+    [SerializeField] TimerController timer;
 
     public float growTime; // how long it takes this plant to grow per state
 
-    private bool growthActive = false; // read whether or not the plant is currently growing, default false
+    public bool growthActive = false; // read whether or not the plant is currently growing, default false
     void Start()
     {
         sprout.transform.localScale = new Vector3(.4f, .4f, 4f);
@@ -116,6 +119,8 @@ public class PlantScript : MonoBehaviour
     private IEnumerator GrowthCycle() // a coroutine to start the growth period for the plant
     {
         growthActive = true; // set bool to indicate plant is now growing
+        timer.ResetTimer(0f);
+        timer.SetMaxTime(growTime);
         yield return new WaitForSeconds(growTime); // wait a number of seconds equal to the variable growTime
 
         // once timer has elapsed, check current state and advance to the next state.
