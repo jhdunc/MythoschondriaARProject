@@ -147,6 +147,12 @@ public class PlantScript : MonoBehaviour
                         sprout.transform.localScale += growSproutScalar * Time.deltaTime;
                     }
                     break;
+                case GrowthState.Growing:
+                    if (sprout.transform.localScale.x < 1)
+                    {
+                        sprout.transform.localScale += growSproutScalar * Time.deltaTime;
+                    }
+                    break;
             }
         }
     }
