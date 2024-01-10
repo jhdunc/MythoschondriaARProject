@@ -9,7 +9,6 @@ public class SaveSystemManagement
     public static void Save(Data data)
     {
         string save = JsonUtility.ToJson(data);
-        //File.Create(Application.persistentDataPath + "Save.json");
         File.WriteAllText(Application.persistentDataPath + "/Save.json", save);
     }
 
@@ -28,12 +27,16 @@ public class SaveSystemManagement
     [Serializable]
     public class Data
     {
-        public Data(Vector3 /*_position, int _items*/)
+        public Data(bool _tilled, object _tilled2, object _tilled1, bool _plotFull, GrowthState _currentState)
         {
-            //position = _position;
-            //Items = _items;
+             tilled = _tilled;
+             plotFull = _plotFull;
+             currentState = _currentState;
         }
-        //public Vector3 position; //TODO get player Location
-        //public int Items;
+
+        //Soil patch 
+        public bool tilled;
+        public bool plotFull;
+        public GrowthState currentState;
     }
 }

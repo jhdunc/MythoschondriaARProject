@@ -11,8 +11,8 @@ public class SoilScript : MonoBehaviour
     public Color dryColor;
     public Color wetColor;
 
-    private bool tilled;
-    private bool plotFull;
+    public bool tilled;//TODO: SAVE this
+    public bool plotFull;//TODO: SAVE this
     private void Start()
     {
         enterState.SetActive(enabled);

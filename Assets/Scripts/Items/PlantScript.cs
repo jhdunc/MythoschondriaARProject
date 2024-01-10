@@ -8,7 +8,7 @@ enum GrowthState
 
 public class PlantScript : MonoBehaviour
 {
-    private GrowthState currentState;
+    public GrowthState currentState;//TODO: SAVE this
     public GameObject seeded;
     public GameObject sprout;
     public GameObject growing;
@@ -16,7 +16,7 @@ public class PlantScript : MonoBehaviour
 
     public float growTime;
 
-    private bool watered = false;
+    private bool watered = false;//TODO: SAVE this
     void ChangeState(GrowthState newState)
     {
         currentState = newState;
