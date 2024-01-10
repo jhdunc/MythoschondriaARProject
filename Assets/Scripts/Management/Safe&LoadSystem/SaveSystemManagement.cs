@@ -27,7 +27,8 @@ public class SaveSystemManagement
     [Serializable]
     public class Data
     {
-        public Data(bool _tilled, object _tilled2, object _tilled1, bool _plotFull, GrowthState _currentState)
+
+        public Data(bool _tilled, bool _plotFull, GrowthState _currentState)
         {
              tilled = _tilled;
              plotFull = _plotFull;

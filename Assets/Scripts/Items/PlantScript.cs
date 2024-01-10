@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-enum GrowthState
+public enum GrowthState
 {
     Seeded, Sprout, Growing, Harvest
 }
 
 public class PlantScript : MonoBehaviour
 {
-    public GrowthState currentState;//TODO: SAVE this
+    private GrowthState currentState;//TODO: SAVE this
     public GameObject seeded;
     public GameObject sprout;
     public GameObject growing;
