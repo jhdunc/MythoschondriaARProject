@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 6448995890255556291}
   - component: {fileID: 7355720893546689573}
   - component: {fileID: 5464388282710105895}
-  - component: {fileID: 8323164087905798724}
   m_Layer: 0
   m_Name: Seed4TomatoNew
   m_TagString: seed
@@ -149,6 +148,7 @@ MonoBehaviour:
   itemID: 4
   seedMax: 3
   rb: {fileID: 0}
+  seedTrack: {fileID: 6680085581049053714}
   plantPrefab: {fileID: 8158808541799005535, guid: d4c2ff9cc2b7b0d45b7480eca6de3c47,
     type: 3}
 --- !u!114 &6680085581049053714
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemList: []
+  cleanup: 0
 --- !u!54 &6448995890255556291
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -340,23 +341,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.18, z: 0.15}
   m_Center: {x: 0, y: 0.077, z: 0}
---- !u!114 &8323164087905798724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2414833852622305577}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fe3c2d3d2bcddf41a3d291f4896fef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemID: 0
-  seedMax: 0
-  rb: {fileID: 0}
-  growthStages: []
 --- !u!1 &9181277699093939280
 GameObject:
   m_ObjectHideFlags: 0
