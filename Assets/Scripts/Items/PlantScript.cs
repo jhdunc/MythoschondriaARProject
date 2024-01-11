@@ -30,7 +30,7 @@ public class PlantScript : MonoBehaviour
     public bool growthActive = false; // read whether or not the plant is currently growing, default false
     void Start()
     {
-        sprout.transform.localScale = new Vector3(.4f, .4f, 4f);
+        sprout.transform.localScale = new Vector3(.4f, .4f, .4f);
         id = transform.parent.GetComponent<SoilScript>().id;
         Debug.Log("Parent ID = " + id);
 
