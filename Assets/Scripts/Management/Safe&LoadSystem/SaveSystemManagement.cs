@@ -28,16 +28,14 @@ public class SaveSystemManagement
     public class Data
     {
 
-        public Data(bool _tilled, bool _plotFull, GrowthState _currentState)
+        public Data(bool _tilled, GrowthState _currentState)
         {
              tilled = _tilled;
-             plotFull = _plotFull;
              currentState = _currentState;
         }
 
         //Soil patch 
         public bool tilled;
-        public bool plotFull;
         public GrowthState currentState;
     }
 }
