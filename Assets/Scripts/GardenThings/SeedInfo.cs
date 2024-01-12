@@ -42,7 +42,8 @@ public class SeedInfo : ItemClass // Inherit from ItemClass (this gives it a nam
     public void OnGrab() // when grab used in VR controllers
     {
         if (seedTrack.cleanup == false) // make sure that the game is not currently running a cleanup cycle for seeds
-        {   
+        {
+            seedTrack.UpdateList();
             Debug.Log("grabbed it!");
             rb.constraints = RigidbodyConstraints.None; // allow object movement
             seedTrack.ItemDestroy(); // run ItemDestroy() from SeedTracking.cs

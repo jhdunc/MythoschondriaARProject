@@ -6,6 +6,7 @@ TagManager:
   tags:
   - seed
   - Tool
+  - Terrain
   layers:
   - Default
   - TransparentFX

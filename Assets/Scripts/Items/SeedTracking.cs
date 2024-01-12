@@ -38,7 +38,7 @@ public class SeedTracking : MonoBehaviour
     }
     public void ItemDestroy()  // method to destroy excess seeds in the world
     {
-        while (worldItemList.Count > seedInfo.seedMax) // so long as there are more seeds in the world than the max allowed by the seed's Max variable, run the following:
+        if (worldItemList.Count > seedInfo.seedMax) // so long as there are more seeds in the world than the max allowed by the seed's Max variable, run the following:
         {
             cleanup = true; // change bool to true so that the onGrab function in SeedPackageSetup.cs does not run (prevents spam)
             UpdateList(); // update the list of seeds currently in the world
