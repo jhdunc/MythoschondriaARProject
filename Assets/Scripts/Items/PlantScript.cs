@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Plant growth states as an enum list
-enum GrowthState
+public enum GrowthState
 {
     Seeded, Sprout, Growing, Harvest
 }
@@ -12,7 +12,7 @@ public class PlantScript : MonoBehaviour
 {
     private int id;
     
-    private GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
+    public GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
     // GameObject variables to hold the model for each growth state
     public GameObject seeded;
@@ -24,6 +24,7 @@ public class PlantScript : MonoBehaviour
 
     private Vector3 growSproutScalar;
     [SerializeField] TimerController timer;
+    [SerializeField] TomatoGrow growTomaat;
 
     public float growTime; // how long it takes this plant to grow per state
 
@@ -41,7 +42,7 @@ public class PlantScript : MonoBehaviour
         if (growTime == 0)
             growTime = 30f;
 
-        growSproutScalar = new Vector3(0.1f, 0.1f, 0.1f);
+        growSproutScalar = new Vector3(0.08f, 0.08f, 0.08f);
     }
     void ChangeState(GrowthState newState) // a method to call when changing the plant's state. When called, will use one of the enum list things as the newState
     {
@@ -153,9 +154,13 @@ public class PlantScript : MonoBehaviour
                     }
                     break;
                 case GrowthState.Growing:
-                    if (sprout.transform.localScale.x < 1)
+                    if (growing.transform.localScale.x < 1)
                     {
-                        sprout.transform.localScale += growSproutScalar * Time.deltaTime;
+                        growing.transform.localScale += growSproutScalar * Time.deltaTime;
+                    }
+                    if(growing.transform.localScale.x >= 1)
+                    {
+                        growTomaat.StartGrowing();
                     }
                     break;
             }
