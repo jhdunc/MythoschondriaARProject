@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235227579286788356}
   m_LocalRotation: {x: -0, y: -0.7071069, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.04, y: 0.163, z: 0.047}
+  m_LocalPosition: {x: 0, y: -0.056, z: -0}
   m_LocalScale: {x: 0.045362, y: 0.04021213, z: 0.045362}
   m_Children: []
   m_Father: {fileID: 3652833166836757495}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447238561115281848}
   m_LocalRotation: {x: -0, y: -0.7071069, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.041, y: 0.103, z: -0.028}
+  m_LocalPosition: {x: 0, y: -0.058, z: -0}
   m_LocalScale: {x: 0.045362, y: 0.040212132, z: 0.045362}
   m_Children: []
   m_Father: {fileID: 1156479231206674079}
@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6011101060610631740}
   m_LocalRotation: {x: -0, y: -0.7071069, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.041, y: 0.3094, z: -0.043}
+  m_LocalPosition: {x: 0, y: -0.0479, z: 0}
   m_LocalScale: {x: 0.045362, y: 0.040212132, z: 0.045362}
   m_Children: []
   m_Father: {fileID: 2940108015011088449}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1156479231206674079}
   m_Layer: 0
-  m_Name: HarvestThatGoodTomaat
+  m_Name: Tomato1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,8 +267,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6263216033511685434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.041, y: 0.164, z: -0.028}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2878496405749899117}
   m_Father: {fileID: 6372494868650611976}
@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2940108015011088449}
   m_Layer: 0
-  m_Name: HarvestThatGoodTomaat (2)
+  m_Name: Tomato3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,8 +332,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7207841907522651099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.041, y: 0.359, z: -0.043}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4630145531552861533}
   m_Father: {fileID: 6372494868650611976}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3652833166836757495}
   m_Layer: 0
-  m_Name: HarvestThatGoodTomaat (1)
+  m_Name: Tomato2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,8 +363,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7364034597719503209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.04, y: 0.2179, z: 0.047}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 7056243797046856152}
   m_Father: {fileID: 6372494868650611976}

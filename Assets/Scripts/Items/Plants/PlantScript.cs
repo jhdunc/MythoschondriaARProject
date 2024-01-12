@@ -31,7 +31,14 @@ public class PlantScript : MonoBehaviour
     public bool growthActive = false; // read whether or not the plant is currently growing, default false
     void Start()
     {
-        sprout.transform.localScale = new Vector3(.4f, .4f, .4f);
+        // set all objects to inactive at start 
+        // this is a safety measure in case someone forgets to manually set them inactive when in the prefabs
+        seeded.SetActive(false);
+        sprout.SetActive(false);
+        growing.SetActive(false);
+        harvest.SetActive(false);
+
+        /*sprout.transform.localScale = new Vector3(.4f, .4f, .4f);*/
         id = transform.parent.GetComponent<SoilScript>().id;
         Debug.Log("Parent ID = " + id);
 
@@ -58,6 +65,7 @@ public class PlantScript : MonoBehaviour
             case GrowthState.Sprout:
                 seeded.SetActive(false);
                 sprout.SetActive(true);
+                sprout.transform.localScale = new Vector3(.4f, .4f, .4f);
                 growthActive = false;
                 break;
             case GrowthState.Growing:

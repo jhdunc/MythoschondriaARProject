@@ -5,7 +5,6 @@ using UnityEngine;
 public class TomatoGrow : MonoBehaviour
 {
     [SerializeField] GameObject[] plantToGrow;
-    [SerializeField] PlantScript plantScript;
     private Vector3 growSproutScalar;
 
     private void Start()
