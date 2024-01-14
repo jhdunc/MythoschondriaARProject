@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
+    public int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
+
     public int id; // set in inspector - specific to plot
 
     // game objects for tilled vs not tilled ground so that the object switches when tool used.
@@ -20,6 +23,7 @@ public class SoilScript : MonoBehaviour
     private bool plotFull;
     private void Start()
     {
+
         // subscribe to EVENT: SoilDry
         GameEvents.current.onSoilDry += SoilDry;
 
@@ -37,6 +41,7 @@ public class SoilScript : MonoBehaviour
             // set up a local variable to hold the colliding item's ID# to identify what the tool is
             GameObject otherObj = other.gameObject;
             int saveItemID;
+            int saveSeedItemID;
 
             // if the colliding object's tag is Tool
             if (otherObj.CompareTag("Tool"))
@@ -83,6 +88,8 @@ public class SoilScript : MonoBehaviour
             // if the colliding object's tag is "seed"
             if (otherObj.CompareTag("seed"))
             {
+                saveSeedItemID = otherObj.GetComponent<SeedInfo>().itemInfo.itemID;//save what seed is being used
+
                 // Tell the Plot what seed is being planted
                 if (tilled == true && !plotFull) // check that the soil has been tilled and does not already have a plant growing
                 {
@@ -91,6 +98,8 @@ public class SoilScript : MonoBehaviour
                     // create instance of the plant that the seed should grow
                     // code means: Make a Game Object(get the variable plantPrefab from SeedInfo attached to colliding object, make the object of this script the parent, set location relative to parent)
                     GameObject instanceObject = GameObject.Instantiate(otherObj.GetComponent<SeedInfo>().plantPrefab, gameObject.transform, worldPositionStays: false);
+
+                    seedPlacement.SetValue(saveSeedItemID,id);//Add saved seed ID to an array at the spot of soil id
 
                     Destroy(otherObj); // destroy the seed GameObject
                     enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
