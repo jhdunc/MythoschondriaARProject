@@ -49,8 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6712693bd8eb5aa4888fbee1adb1e73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Potato Seed
-  itemID: 2
+  itemInfo: {fileID: 11400000, guid: 05a7854dab1433b4780369c12e06bdbc, type: 2}
   seedMax: 3
   rb: {fileID: 0}
   plantPrefab: {fileID: 8041973173418555596, guid: ebe369ab2c76e6e4da8d9ce53de86c81,
@@ -68,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemList: []
+  seedInfo: {fileID: 0}
   cleanup: 0
 --- !u!54 &3696902673877679193
 Rigidbody:
@@ -368,7 +368,7 @@ Transform:
   m_GameObject: {fileID: 9181277699093939280}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.3000007, y: 5.2999997, z: 5.2999997}
+  m_LocalScale: {x: 4.9, y: 4.9, z: 4.9}
   m_Children: []
   m_Father: {fileID: 7392900200499590377}
   m_RootOrder: 0

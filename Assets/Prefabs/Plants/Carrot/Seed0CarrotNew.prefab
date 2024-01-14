@@ -144,8 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6712693bd8eb5aa4888fbee1adb1e73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Carrot Seed
-  itemID: 0
+  itemInfo: {fileID: 11400000, guid: 48d6767a2a15c44469e8e12d52b796e1, type: 2}
   seedMax: 3
   rb: {fileID: 0}
   plantPrefab: {fileID: 8619039765839263169, guid: eb797ead451543540b738e3dc2d64fa0,
@@ -163,6 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemList: []
+  seedInfo: {fileID: 0}
+  cleanup: 0
 --- !u!54 &7667021829324657448
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -367,7 +368,7 @@ Transform:
   m_GameObject: {fileID: 9181277699093939280}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.3000007, y: 5.2999997, z: 5.2999997}
+  m_LocalScale: {x: 4.9, y: 4.9, z: 4.9}
   m_Children: []
   m_Father: {fileID: 7392900200499590377}
   m_RootOrder: 0

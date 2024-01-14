@@ -44,7 +44,7 @@ public class SoilSeededState : PlotBaseState
             {
                 // Tell the Plot what tool is being used
 
-                saveItemID = otherObj.GetComponent<ToolScript>().itemID;
+                saveItemID = otherObj.GetComponent<ToolScript>().itemInfo.itemID;
                 switch (saveItemID)
                 {
                     case 100:

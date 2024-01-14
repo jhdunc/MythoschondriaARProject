@@ -44,7 +44,7 @@ public class SoilScript : MonoBehaviour
                 // Tell the Plot what tool is being used
                 // by setting the local variable saveItemID to the colliding object's ID#
 
-                saveItemID = otherObj.GetComponent<ToolScript>().itemID;
+                saveItemID = otherObj.GetComponent<ToolScript>().itemInfo.itemID;
 
                 // use switch cases to determine what happens based on that tool's item ID
                 switch (saveItemID)

@@ -144,11 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6712693bd8eb5aa4888fbee1adb1e73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  itemID: 4
+  itemInfo: {fileID: 11400000, guid: fdaa9292f29fe604ab2684e5ca517c30, type: 2}
   seedMax: 3
   rb: {fileID: 0}
-  seedTrack: {fileID: 6680085581049053714}
   plantPrefab: {fileID: 8158808541799005535, guid: d4c2ff9cc2b7b0d45b7480eca6de3c47,
     type: 3}
 --- !u!114 &6680085581049053714
@@ -164,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldItemList: []
+  seedInfo: {fileID: 2840973455857034779}
   cleanup: 0
 --- !u!54 &6448995890255556291
 Rigidbody:
@@ -369,7 +368,7 @@ Transform:
   m_GameObject: {fileID: 9181277699093939280}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.3000007, y: 5.2999997, z: 5.2999997}
+  m_LocalScale: {x: 4.9, y: 4.9, z: 4.9}
   m_Children: []
   m_Father: {fileID: 7392900200499590377}
   m_RootOrder: 0

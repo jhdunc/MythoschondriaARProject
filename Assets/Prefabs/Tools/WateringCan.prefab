@@ -50,8 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Watering Can
-  itemID: 102
+  itemInfo: {fileID: 11400000, guid: 3ee6b82f3571693499cc473e76b60ca1, type: 2}
 --- !u!64 &7162024017504456917
 MeshCollider:
   m_ObjectHideFlags: 0

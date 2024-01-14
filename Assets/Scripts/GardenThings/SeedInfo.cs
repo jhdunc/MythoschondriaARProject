@@ -4,8 +4,9 @@ using UnityEngine;
 
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class SeedInfo : ItemClass // Inherit from ItemClass (this gives it a name, itemID, etc in the inspector)
+public class SeedInfo : MonoBehaviour // Inherit from ItemClass (this gives it a name, itemID, etc in the inspector)
 {
+    public ItemClass itemInfo;
     private XRInteractionManager interactionManager; // set the interaction manager for VR interactions
     public int seedMax; // set the maximum number of seeds that can spawn in the world
     public Rigidbody rb; // variable to hold the object's rigidbody information
@@ -28,14 +29,14 @@ public class SeedInfo : ItemClass // Inherit from ItemClass (this gives it a nam
         GetComponent<XRGrabInteractable>().interactionManager = interactionManager; // Set the XR Grab script's interaction manager script to the variable found above
         
         // SETUP SPAWNING AND TRACKING
-        seedPacks = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().itemList[itemID]; // get object from list in the Grid
-        seedSpawn = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().spawnPoint[itemID]; // get object spawn point from list in the Grid
-        seedTrack = GetComponent<SeedTracking>(); // get script from this object to reference as a variable
-
-        rb.useGravity = true; // set gravity to true
-        rb.constraints = RigidbodyConstraints.FreezeAll; // set all constraints to freeze (position/rotation) so that objects will not move on spawn
-        rb.isKinematic = false; // object will move even if not acted upon (if not frozen)
         
+        seedPacks = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().itemList[itemInfo.itemID]; // get object from list in the Grid
+        seedSpawn = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().spawnPoint[itemInfo.itemID]; // get object spawn point from list in the Grid
+        seedTrack = GetComponent<SeedTracking>(); // get script from this object to reference as a variable
+        
+        rb.useGravity = true; // set gravity to true
+        rb.isKinematic = false; // object will move even if not acted upon (if not frozen)
+        rb.constraints = RigidbodyConstraints.FreezeAll; // set all constraints to freeze (position/rotation) so that objects will not move on spawn
 
     }
 

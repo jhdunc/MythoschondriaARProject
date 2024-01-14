@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SeedPacketGrid : MonoBehaviour
 {
-    public List<GameObject> itemList = new List<GameObject>();
+    public GameObject[] itemList;
     public GameObject[] spawnPoint;
     private int spawnCount;
 
@@ -14,10 +14,9 @@ public class SeedPacketGrid : MonoBehaviour
     }
     private void SpawnSeeds()
     {
-        for (int i = 0; i < itemList.Count; i++)
+        for (int i = 0; i < itemList.Length; i++)
         {
             GameObject instanceObject = GameObject.Instantiate(itemList[i], spawnPoint[i].transform.position, spawnPoint[i].transform.rotation);
-
 
         }
     }

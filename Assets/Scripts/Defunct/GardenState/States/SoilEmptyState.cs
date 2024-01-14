@@ -82,7 +82,7 @@ public class SoilEmptyState : PlotBaseState
             {
                 // set switch cases to tool ID numbers
                 
-                switch (otherObj.GetComponent<ToolScript>().itemID)
+                switch (otherObj.GetComponent<ToolScript>().itemInfo.itemID)
                 {
                     case 100: // HOE
                         plot.GetComponent<PlotScript>().ready = true;

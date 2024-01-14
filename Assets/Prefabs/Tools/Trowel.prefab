@@ -200,8 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Trowel
-  itemID: 101
+  itemInfo: {fileID: 11400000, guid: b1bfdaab3f2809a428bd76f10e0752ee, type: 2}
 --- !u!114 &6247201830436374370
 MonoBehaviour:
   m_ObjectHideFlags: 0

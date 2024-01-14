@@ -23,10 +23,16 @@ public class GrabSetup : MonoBehaviour
     {
         Debug.Log("i've been grabbed! says the tomato");
         rb.constraints = RigidbodyConstraints.None;
+        transform.SetParent(null);
         Debug.Log("scale before: " + gameObject.transform.localScale);
         Debug.Log("what is: " + gameObject);
         gameObject.transform.localScale = grabbedScale;
         Debug.Log("scale after: " + gameObject.transform.localScale);
         
+    }
+
+    public void AddToInventory()
+    {
+
     }
 }

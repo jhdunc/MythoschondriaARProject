@@ -38,7 +38,6 @@ public class PlantScript : MonoBehaviour
         growing.SetActive(false);
         harvest.SetActive(false);
 
-        /*sprout.transform.localScale = new Vector3(.4f, .4f, .4f);*/
         id = transform.parent.GetComponent<SoilScript>().id;
         Debug.Log("Parent ID = " + id);
 
@@ -49,7 +48,7 @@ public class PlantScript : MonoBehaviour
         if (growTime == 0)
             growTime = 30f;
 
-        growSproutScalar = new Vector3(0.08f, 0.08f, 0.08f);
+        growSproutScalar = new Vector3(0.08f, 0.08f, 0.08f); // the rate at which plants scale during sprout/growing states
     }
     void ChangeState(GrowthState newState) // a method to call when changing the plant's state. When called, will use one of the enum list things as the newState
     {
@@ -100,7 +99,7 @@ public class PlantScript : MonoBehaviour
                 // Tell the Plot what tool is being used
                 // by setting the local variable saveItemID to the colliding object's ID#
 
-                saveItemID = otherObj.GetComponent<ToolScript>().itemID;
+                saveItemID = otherObj.GetComponent<ToolScript>().itemInfo.itemID;
 
                 // use switch cases to determine what happens based on that tool's item ID
                 switch (saveItemID)
