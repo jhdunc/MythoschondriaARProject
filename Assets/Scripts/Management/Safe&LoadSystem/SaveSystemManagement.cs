@@ -34,6 +34,6 @@ public class SaveSystemManagement
         }
  
         int[] seedPlacement = SoilScript.seedPlacement;
-        public GrowthState currentState;
+        //public GrowthState currentState;
     }
 }
