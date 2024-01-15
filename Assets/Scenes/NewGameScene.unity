@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_Camera: {fileID: 1927480334}
   m_OriginBaseGameObject: {fileID: 305562965}
   m_CameraFloorOffsetObject: {fileID: 1822479222}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.1176
 --- !u!4 &305562967
 Transform:
@@ -1398,6 +1398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0be47fd1939c8f4983cfc7c1ba819bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultHeight: 1
+  camera: {fileID: 0}
 --- !u!1001 &312621085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1685,8 +1687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Hoe
-  itemID: 100
+  itemInfo: {fileID: 0}
 --- !u!65 &341871685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2382,8 +2383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Watering Can
-  itemID: 102
+  itemInfo: {fileID: 0}
 --- !u!135 &453677671
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9999,8 +9999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Trowel
-  itemID: 101
+  itemInfo: {fileID: 0}
 --- !u!54 &1208728364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12081,8 +12080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Watering Can
-  itemID: 102
+  itemInfo: {fileID: 0}
 --- !u!135 &1580310477
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13009,8 +13007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Trowel
-  itemID: 101
+  itemInfo: {fileID: 0}
 --- !u!54 &1749759138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13178,8 +13175,6 @@ MonoBehaviour:
   - {fileID: 2414833852622305577, guid: 98889aee9352d6a4bb121e8186a4b956, type: 3}
   - {fileID: 2414833852622305577, guid: 795bfc58c6bd03a4085f6c031c278741, type: 3}
   - {fileID: 2414833852622305577, guid: be57e061bdf90af4e8ccb72206382fdd, type: 3}
-  - {fileID: 2414833852622305577, guid: 622819a5994cbb34bb89a304c4064bb8, type: 3}
-  - {fileID: 2414833852622305577, guid: a906b5c4163ed4f4a9362713312dd925, type: 3}
   spawnPoint:
   - {fileID: 84044416}
   - {fileID: 1129420188}
@@ -13937,8 +13932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Hoe
-  itemID: 100
+  itemInfo: {fileID: 0}
 --- !u!65 &1949003826
 BoxCollider:
   m_ObjectHideFlags: 0
