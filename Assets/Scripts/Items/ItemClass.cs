@@ -13,5 +13,3 @@ public class ItemClass : ScriptableObject
     public Image icon;
     
 }
-
-
