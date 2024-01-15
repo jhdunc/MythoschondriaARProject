@@ -1685,8 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Hoe
-  itemID: 100
+  itemInfo: {fileID: 0}
 --- !u!65 &341871685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2382,8 +2381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Watering Can
-  itemID: 102
+  itemInfo: {fileID: 0}
 --- !u!135 &453677671
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9999,8 +9997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Trowel
-  itemID: 101
+  itemInfo: {fileID: 0}
 --- !u!54 &1208728364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12081,8 +12078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Watering Can
-  itemID: 102
+  itemInfo: {fileID: 0}
 --- !u!135 &1580310477
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13009,8 +13005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Trowel
-  itemID: 101
+  itemInfo: {fileID: 0}
 --- !u!54 &1749759138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13937,8 +13932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Hoe
-  itemID: 100
+  itemInfo: {fileID: 0}
 --- !u!65 &1949003826
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14601,7 +14595,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126749116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.16586712, w: 0.9861482}
   m_LocalPosition: {x: 0, y: 1.085, z: -0.033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14610,7 +14604,7 @@ Transform:
   - {fileID: 1151676535}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.095}
 --- !u!1 &2144970062
 GameObject:
   m_ObjectHideFlags: 0
