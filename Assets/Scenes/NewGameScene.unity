@@ -1672,8 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Hoe
-  itemID: 100
+  itemInfo: {fileID: 0}
 --- !u!65 &341871685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2369,8 +2368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Watering Can
-  itemID: 102
+  itemInfo: {fileID: 0}
 --- !u!135 &453677671
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9986,8 +9984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Trowel
-  itemID: 101
+  itemInfo: {fileID: 0}
 --- !u!54 &1208728364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12068,8 +12065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Watering Can
-  itemID: 102
+  itemInfo: {fileID: 0}
 --- !u!135 &1580310477
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12996,8 +12992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Trowel
-  itemID: 101
+  itemInfo: {fileID: 0}
 --- !u!54 &1749759138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13924,8 +13919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a223f0da3d543247b9ce93dc31938fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Hoe
-  itemID: 100
+  itemInfo: {fileID: 0}
 --- !u!65 &1949003826
 BoxCollider:
   m_ObjectHideFlags: 0
