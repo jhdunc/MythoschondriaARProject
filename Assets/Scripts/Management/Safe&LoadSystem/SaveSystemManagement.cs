@@ -27,15 +27,13 @@ public class SaveSystemManagement
     [Serializable]
     public class Data
     {
-
-        public Data(bool _tilled, GrowthState _currentState)
+        public Data(int[] _seedPlacement/*, GrowthState _currentState*/)
         {
-             tilled = _tilled;
-             currentState = _currentState;
+            seedPlacement = _seedPlacement;
+            //currentState = _currentState;
         }
-
-        //Soil patch 
-        public bool tilled;
+ 
+        int[] seedPlacement = SoilScript.seedPlacement;
         public GrowthState currentState;
     }
 }

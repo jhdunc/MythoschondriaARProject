@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
-    public int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
+    public static int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
 
     public int id; // set in inspector - specific to plot
 
