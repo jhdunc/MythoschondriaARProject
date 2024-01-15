@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b7d1680d4d33a74bbeb48729185a970, type: 3}
-  m_Name: Veggies
+  m_Script: {fileID: 11500000, guid: 622bed2341448a74f85d3673c0d159cd, type: 3}
+  m_Name: InventoryItemData
   m_EditorClassIdentifier: 
-  itemDatabase:
-  - {fileID: 0}
