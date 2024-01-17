@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultHeight: 1
-  camera: {fileID: 0}
+  camera: {fileID: 1927480334}
 --- !u!1001 &312621085
 PrefabInstance:
   m_ObjectHideFlags: 0
