@@ -7,8 +7,9 @@ using UnityEngine.Events;
 public class SoilScript : MonoBehaviour
 {
     #region Jeremy's
-    public static int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
-    public static object[] plantPlacement = new object[12];//Add what plant(instance as child) had been planted where(ID) on an array
+    public static int[] seedPlacement = new int[11];//Add what seed(ID) had been planted where(ID) on an array
+    //public static object[] plantPlacement = new object[11];//Add what plant(instance as child) had been planted where(ID) on an array
+    int saveSeedItemID;
     #endregion
 
     public int id; // set in inspector - specific to plot
@@ -29,7 +30,14 @@ public class SoilScript : MonoBehaviour
     //On instantiate plant as child
     //Locate child, put in list
     //plantPlacement.SetValue(savePlantItemID,id);
+    void Awake()
+    {
+        if (SaveSystemManagement.Load(out SaveSystemManagement.Data data))
+        {
+            seedPlacement = new int[11];
+        }
 
+    }
 
     private void Start()
     {
@@ -51,7 +59,6 @@ public class SoilScript : MonoBehaviour
             // set up a local variable to hold the colliding item's ID# to identify what the tool is
             GameObject otherObj = other.gameObject;
             int saveItemID;
-            int saveSeedItemID; //Jeremy's
 
             // if the colliding object's tag is Tool
             if (otherObj.CompareTag("Tool"))

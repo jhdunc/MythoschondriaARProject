@@ -10,6 +10,7 @@ public class SaveSystemManagement
     {
         string save = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/Save.json", save);
+        Debug.Log(save);
     }
 
     public static bool Load(out Data data)//Takes data which is saved as json, and reads it. UNLESS it doesn't exist
@@ -20,6 +21,7 @@ public class SaveSystemManagement
             return false;
         string save = File.ReadAllText(Application.persistentDataPath + "/Save.json");
         data = JsonUtility.FromJson<Data>(save);
+        Debug.Log(data);
         if (data != null) return true;
         else return false;
     }

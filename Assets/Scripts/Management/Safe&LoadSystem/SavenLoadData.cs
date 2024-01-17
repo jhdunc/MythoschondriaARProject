@@ -10,7 +10,7 @@ public class SavenLoadData : MonoBehaviour
     public void OnLoadGame()//Add this to the button to load saved data from SaveSystemManagements
     {
         Debug.Log("Load");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("NewGameScene");
         SaveSystemManagement.Load(out data);
     }
 
