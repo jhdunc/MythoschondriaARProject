@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,11 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
+    public static int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
+    public static object[] plantPlacement = new object[12];//Add what plant(instance as child) had been planted where(ID) on an array
+
+    public int id; // set in inspector - specific to plot
+
     // game objects for tilled vs not tilled ground so that the object switches when tool used.
     public GameObject enterState;
     public GameObject tilledState;
@@ -16,8 +22,19 @@ public class SoilScript : MonoBehaviour
     // bools to control whether or not actions can be taken based on current plot state
     private bool tilled;
     private bool plotFull;
+
+
+    //On instantiate plant as child
+    //Locate child, put in list
+    //plantPlacement.SetValue(savePlantItemID,id);
+
+
     private void Start()
     {
+
+        // subscribe to EVENT: SoilDry
+        GameEvents.current.onSoilDry += SoilDry;
+
         // when plot is created, set default state to untilled and make tilled inactive.
         enterState.SetActive(true);
         tilledState.SetActive(false);
@@ -32,6 +49,7 @@ public class SoilScript : MonoBehaviour
             // set up a local variable to hold the colliding item's ID# to identify what the tool is
             GameObject otherObj = other.gameObject;
             int saveItemID;
+            int saveSeedItemID;
 
             // if the colliding object's tag is Tool
             if (otherObj.CompareTag("Tool"))
@@ -39,7 +57,7 @@ public class SoilScript : MonoBehaviour
                 // Tell the Plot what tool is being used
                 // by setting the local variable saveItemID to the colliding object's ID#
 
-                saveItemID = otherObj.GetComponent<ToolScript>().itemID;
+                saveItemID = otherObj.GetComponent<ToolScript>().itemInfo.itemID;
 
                 // use switch cases to determine what happens based on that tool's item ID
                 switch (saveItemID)
@@ -78,6 +96,8 @@ public class SoilScript : MonoBehaviour
             // if the colliding object's tag is "seed"
             if (otherObj.CompareTag("seed"))
             {
+                saveSeedItemID = otherObj.GetComponent<SeedInfo>().itemInfo.itemID;//save what seed is being used
+
                 // Tell the Plot what seed is being planted
                 if (tilled == true && !plotFull) // check that the soil has been tilled and does not already have a plant growing
                 {
@@ -87,6 +107,8 @@ public class SoilScript : MonoBehaviour
                     // code means: Make a Game Object(get the variable plantPrefab from SeedInfo attached to colliding object, make the object of this script the parent, set location relative to parent)
                     GameObject instanceObject = GameObject.Instantiate(otherObj.GetComponent<SeedInfo>().plantPrefab, gameObject.transform, worldPositionStays: false);
 
+                    seedPlacement.SetValue(saveSeedItemID,id);//Add saved seed ID to an array at the spot of soil id
+
                     Destroy(otherObj); // destroy the seed GameObject
                     enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
                     tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
@@ -94,5 +116,17 @@ public class SoilScript : MonoBehaviour
             }
         }
     }
-
+    private void SoilDry(int id)
+    {
+        if(id == this.id)
+        { 
+        enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
+        tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
+        }
+    }
+    private void OnDestroy()
+    {
+        // if this object is destroyed, unsubscribe from the event
+        GameEvents.current.onSoilDry -= SoilDry;
+    }
 }

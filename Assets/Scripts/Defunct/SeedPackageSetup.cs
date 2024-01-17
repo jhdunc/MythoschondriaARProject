@@ -19,13 +19,13 @@ public class SeedPackageSetup : ItemClass
         if(seedMax == 0)
         { seedMax = 3; }
 
-        rb = GetComponent<Rigidbody>();
+/*        rb = GetComponent<Rigidbody>();
         interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
         GetComponent<XRGrabInteractable>().interactionManager = interactionManager;
         seedPacks = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().itemList[itemID];
         seedSpawn = GameObject.Find("SeedManager").GetComponent<SeedPacketGrid>().spawnPoint[itemID];
 
-        seedWorld = GetComponent<SeedWorldScript>();
+        seedWorld = GetComponent<SeedWorldScript>();*/
 
         rb.useGravity = true;
         rb.isKinematic = false;
