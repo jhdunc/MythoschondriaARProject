@@ -6,13 +6,13 @@ using System;
 
 public class SaveSystemManagement
 {
-    public static void Save(Data data)
+    public static void Save(Data data)//Takes data which is going to be saved, turns it into json replacing data already saved, then saves it on pc
     {
         string save = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/Save.json", save);
     }
 
-    public static bool Load(out Data data)
+    public static bool Load(out Data data)//Takes data which is saved as json, and reads it. UNLESS it doesn't exist
     {
         data = null;
 
@@ -25,7 +25,7 @@ public class SaveSystemManagement
     }
 
     [Serializable]
-    public class Data
+    public class Data//What data is being saved > only saves the placement of the seeds
     {
         public Data(int[] _seedPlacement/*, GrowthState _currentState*/)
         {
