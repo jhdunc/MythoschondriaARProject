@@ -56,6 +56,7 @@ public class SoilScript : MonoBehaviour
                 {
                     case 100: // if item is a Hoe:
                         Debug.Log("Hoe has been used"); // debug to confirm Hoe recognition working
+                        FindObjectOfType<AudioManager>().Play("Dig"); // digging SFX plays
                         enterState.SetActive(false); // deactivate the tilled soil game object
                         tilledState.SetActive(true); // set tilled soil game object to active
                         
@@ -67,6 +68,7 @@ public class SoilScript : MonoBehaviour
 
                     case 101: // if item is a Trowel
                         Debug.Log("Trowel has been used"); // debug to confirm Trowel recognition working
+                        FindObjectOfType<AudioManager>().Play("Dig"); //digging SFX plays
                         enterState.SetActive(false); // deactivate the tilled soil game object
                         tilledState.SetActive(true); // set tilled soil game object to active
 
@@ -93,6 +95,7 @@ public class SoilScript : MonoBehaviour
                 // Tell the Plot what seed is being planted
                 if (tilled == true && !plotFull) // check that the soil has been tilled and does not already have a plant growing
                 {
+                    FindObjectOfType<AudioManager>().Play("Pop"); // planted SFX plays
                     plotFull = true; // switch bool to indicate a plant is now growing in the soil
                     
                     // create instance of the plant that the seed should grow
