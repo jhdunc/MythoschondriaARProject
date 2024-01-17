@@ -1189,6 +1189,7 @@ GameObject:
   - component: {fileID: 305562970}
   - component: {fileID: 305562971}
   - component: {fileID: 305562972}
+  - component: {fileID: 305562973}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1211,7 +1212,7 @@ MonoBehaviour:
   m_Camera: {fileID: 1927480334}
   m_OriginBaseGameObject: {fileID: 305562965}
   m_CameraFloorOffsetObject: {fileID: 1822479222}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.1176
 --- !u!4 &305562967
 Transform:
@@ -1385,6 +1386,20 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+--- !u!114 &305562973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305562965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0be47fd1939c8f4983cfc7c1ba819bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultHeight: 1
+  camera: {fileID: 0}
 --- !u!1001 &312621085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,11 +2495,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1423743878}
     m_Modifications:
-    - target: {fileID: 5600351654718454195, guid: eb778dafc62c34d42ba231befaedfcdf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cccf6d6f47eba7343b4207b9956d693c, type: 2}
     - target: {fileID: 8249230696956201412, guid: eb778dafc62c34d42ba231befaedfcdf,
         type: 3}
       propertyPath: m_RootOrder
@@ -11894,11 +11904,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1309487855}
     m_Modifications:
-    - target: {fileID: 2952532519126844870, guid: 927232924abbe7749aba0b85a30aa1db,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cccf6d6f47eba7343b4207b9956d693c, type: 2}
     - target: {fileID: 7252658992801458734, guid: 927232924abbe7749aba0b85a30aa1db,
         type: 3}
       propertyPath: m_Name
@@ -11912,7 +11917,7 @@ PrefabInstance:
     - target: {fileID: 8065188552600285332, guid: 927232924abbe7749aba0b85a30aa1db,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1234
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8065188552600285332, guid: 927232924abbe7749aba0b85a30aa1db,
         type: 3}
@@ -13170,8 +13175,6 @@ MonoBehaviour:
   - {fileID: 2414833852622305577, guid: 98889aee9352d6a4bb121e8186a4b956, type: 3}
   - {fileID: 2414833852622305577, guid: 795bfc58c6bd03a4085f6c031c278741, type: 3}
   - {fileID: 2414833852622305577, guid: be57e061bdf90af4e8ccb72206382fdd, type: 3}
-  - {fileID: 2414833852622305577, guid: 622819a5994cbb34bb89a304c4064bb8, type: 3}
-  - {fileID: 2414833852622305577, guid: a906b5c4163ed4f4a9362713312dd925, type: 3}
   spawnPoint:
   - {fileID: 84044416}
   - {fileID: 1129420188}
