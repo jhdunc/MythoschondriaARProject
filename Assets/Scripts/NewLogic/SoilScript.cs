@@ -113,8 +113,10 @@ public class SoilScript : MonoBehaviour
                     seedPlacement.SetValue(saveSeedItemID,id);//Add saved seed ID to an array at the spot of soil id
 
                     Destroy(otherObj); // destroy the seed GameObject
+                    SoilDry(this.id);
+                    /*
                     enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
-                    tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
+                    tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered*/
                 }
             }
         }
