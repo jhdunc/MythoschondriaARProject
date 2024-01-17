@@ -9,6 +9,8 @@ public class GrabSetup : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] float grabSize;
     private Vector3 grabbedScale;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,11 +30,8 @@ public class GrabSetup : MonoBehaviour
         Debug.Log("what is: " + gameObject);
         gameObject.transform.localScale = grabbedScale;
         Debug.Log("scale after: " + gameObject.transform.localScale);
-        
-    }
-
-    public void AddToInventory()
-    {
 
     }
+
+
 }

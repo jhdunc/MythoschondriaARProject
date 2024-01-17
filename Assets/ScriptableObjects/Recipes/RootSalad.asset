@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b7d1680d4d33a74bbeb48729185a970, type: 3}
-  m_Name: Veggies
+  m_Script: {fileID: 11500000, guid: ab8fa5093529d3340b2c35c0ec55476d, type: 3}
+  m_Name: RootSalad
   m_EditorClassIdentifier: 
-  itemDatabase:
-  - {fileID: 0}
+  recipeName: Root Salad
+  ingredient: []
+  quantity: 010000000200000003000000

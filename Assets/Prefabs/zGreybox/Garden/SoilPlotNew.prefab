@@ -152,7 +152,7 @@ MonoBehaviour:
   id: 1
   enterState: {fileID: 8164152798399418503}
   tilledState: {fileID: 5947161329041131424}
-  dryColor: {r: 0.6901961, g: 0.5019608, b: 0.36078432, a: 1}
+  dryColor: {r: 1, g: 1, b: 1, a: 1}
   wetColor: {r: 0.4339623, g: 0.20892313, b: 0.01842292, a: 0.4117647}
 --- !u!1 &5947161329041131424
 GameObject:

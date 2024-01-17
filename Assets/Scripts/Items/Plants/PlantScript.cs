@@ -10,7 +10,8 @@ public enum GrowthState
 
 public class PlantScript : MonoBehaviour
 {
-    private int id;
+    private int idSoil; // parent ID (soil plot, used for wet/dry communication)
+    [SerializeField] ItemClass itemInfo;
     
     public GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
@@ -20,7 +21,7 @@ public class PlantScript : MonoBehaviour
     public GameObject growing;
     public GameObject harvest;
 
-    [SerializeField] GameObject timerPrefab;
+    [SerializeField] GameObject timerPrefab; // UI prefab for the timer bar
 
     private Vector3 growSproutScalar;
     [SerializeField] TimerController timer;
@@ -38,8 +39,8 @@ public class PlantScript : MonoBehaviour
         growing.SetActive(false);
         harvest.SetActive(false);
 
-        id = transform.parent.GetComponent<SoilScript>().id;
-        Debug.Log("Parent ID = " + id);
+        idSoil = transform.parent.GetComponent<SoilScript>().id;
+        Debug.Log("Parent ID = " + idSoil);
 
         ChangeState(GrowthState.Seeded); // when instantiated, change growth state to Seeded
 
@@ -135,17 +136,17 @@ public class PlantScript : MonoBehaviour
         if (currentState == GrowthState.Seeded)
         {
             ChangeState(GrowthState.Sprout);
-            GameEvents.current.SoilDry(id);
+            GameEvents.current.SoilDry(idSoil);
         }
         else if (currentState == GrowthState.Sprout)
         {
             ChangeState(GrowthState.Growing);
-            GameEvents.current.SoilDry(id);
+            GameEvents.current.SoilDry(idSoil);
         }
         else if (currentState == GrowthState.Growing)
         {
             ChangeState(GrowthState.Harvest);
-            GameEvents.current.SoilDry(id);
+            GameEvents.current.SoilDry(idSoil);
         }
     }
     private void Update()
@@ -167,6 +168,7 @@ public class PlantScript : MonoBehaviour
                     }
                     if(growing.transform.localScale.x >= 1)
                     {
+                        if (growTomaat != null)
                         growTomaat.StartGrowing();
                     }
                     break;
