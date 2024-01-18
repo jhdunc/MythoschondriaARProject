@@ -30,7 +30,8 @@ public class RecipeClipboard : MonoBehaviour
             
             // create the UI text field prefab for this specific ingredient
             GameObject newPrefab;
-            newPrefab = Instantiate(recipePrefab, gridParent.transform.position, gridParent.transform.rotation); // creates the recipePrefab with position and rotation of gridParent
+            Quaternion fabRot = new Quaternion(0, 0, 0, 0);
+            newPrefab = Instantiate(recipePrefab, gridParent.transform.position, fabRot); // creates the recipePrefab with position and rotation of gridParent
             newPrefab.transform.SetParent(gridParent.transform, false); // sets the prefab to be a child of the gridParent - this makes it easier to find
             newPrefab.name = $"Ingredient{i}"; // rename the prefab to reference it's index number (ensures that each iteration is unique)
 

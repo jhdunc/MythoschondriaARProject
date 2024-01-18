@@ -29,8 +29,7 @@ public class GrabSetup : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
         transform.SetParent(null);
 
-        // UP FOR GRABS
-        // WHY IS THIS NO WORK
+        
         Debug.Log("scale before: " + gameObject.transform.localScale);
         gameObject.transform.localScale = grabbedScale;
         Debug.Log("scale after: " + gameObject.transform.localScale);
