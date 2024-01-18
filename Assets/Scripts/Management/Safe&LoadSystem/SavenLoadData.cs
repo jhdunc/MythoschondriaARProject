@@ -17,7 +17,7 @@ public class SavenLoadData : MonoBehaviour
     public void OnSaveGame()
     {
         Debug.Log("Going to Save");
-        //SaveSystemManagement.Save(new SaveSystemManagement.Data(bool _tilled, GrowthState _currentState));
+        SaveSystemManagement.Save(new SaveSystemManagement.Data(SoilScript.seedPlacement));
     }
 
 }

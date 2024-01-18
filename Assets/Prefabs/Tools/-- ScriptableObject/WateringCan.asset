@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WateringCan
   m_EditorClassIdentifier: 
   itemName: 
-  itemID: 0
+  itemID: 102
   icon: {fileID: 0}

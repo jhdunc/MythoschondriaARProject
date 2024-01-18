@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d95a0bc5c0f2f4496b79099d29036d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemInfo: {fileID: 11400000, guid: 05a7854dab1433b4780369c12e06bdbc, type: 2}
+  currentState: 0
   seeded: {fileID: 8931405888653046366}
   sprout: {fileID: 7333961000000506777, guid: 433a1458d575b8d4493aeb0b48096e61, type: 3}
   growing: {fileID: 5946092382872634369, guid: d034985fa2f6927459c9a038fc308e86, type: 3}
@@ -56,6 +58,7 @@ MonoBehaviour:
   timerPrefab: {fileID: 6107387598365131097, guid: f12567b2ec35e074e850c8fc05967ed2,
     type: 3}
   timer: {fileID: 5623632258374129370}
+  growTomaat: {fileID: 0}
   growTime: 5
   growthActive: 0
 --- !u!135 &4230755573475465137

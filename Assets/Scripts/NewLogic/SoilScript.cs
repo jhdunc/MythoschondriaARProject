@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
-    public int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
+    public static int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
+    public static object[] plantPlacement = new object[12];//Add what plant(instance as child) had been planted where(ID) on an array
 
     public int id; // set in inspector - specific to plot
 
@@ -21,6 +22,13 @@ public class SoilScript : MonoBehaviour
     // bools to control whether or not actions can be taken based on current plot state
     private bool tilled;
     private bool plotFull;
+
+
+    //On instantiate plant as child
+    //Locate child, put in list
+    //plantPlacement.SetValue(savePlantItemID,id);
+
+
     private void Start()
     {
 
@@ -105,8 +113,10 @@ public class SoilScript : MonoBehaviour
                     seedPlacement.SetValue(saveSeedItemID,id);//Add saved seed ID to an array at the spot of soil id
 
                     Destroy(otherObj); // destroy the seed GameObject
+                    SoilDry(this.id);
+                    /*
                     enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
-                    tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
+                    tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered*/
                 }
             }
         }

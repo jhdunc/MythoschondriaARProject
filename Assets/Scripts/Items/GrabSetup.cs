@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+// Added to harvest items to make sure they grab correctly
 public class GrabSetup : MonoBehaviour
 {
     private XRInteractionManager interactionManager;
     private Rigidbody rb;
     [SerializeField] float grabSize;
     private Vector3 grabbedScale;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,18 +24,18 @@ public class GrabSetup : MonoBehaviour
     }
     public void OnGrab()
     {
+
         Debug.Log("i've been grabbed! says the tomato");
         rb.constraints = RigidbodyConstraints.None;
         transform.SetParent(null);
+
+        // UP FOR GRABS
+        // WHY IS THIS NO WORK
         Debug.Log("scale before: " + gameObject.transform.localScale);
-        Debug.Log("what is: " + gameObject);
         gameObject.transform.localScale = grabbedScale;
         Debug.Log("scale after: " + gameObject.transform.localScale);
-        
-    }
-
-    public void AddToInventory()
-    {
 
     }
+
+
 }
