@@ -20,6 +20,7 @@ public class TimerController : MonoBehaviour
     {
         timerUI.SetActive(false);
         timeElapsed = 0f;
+        SetMaxTime(parentPlantScript.growTime);
         slider.GetComponent<Slider>().maxValue = maxTime;
     }
     public void SetMaxTime(float growTime)
