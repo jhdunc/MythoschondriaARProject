@@ -49,9 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6712693bd8eb5aa4888fbee1adb1e73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  itemID: 4
-  seedMax: 3
+  itemInfo: {fileID: 0}
+  seedMax: 4
   rb: {fileID: 0}
   plantPrefab: {fileID: 373617602054322366, guid: c5fd18cbfe09a094dad0ed78d6a227e3,
     type: 3}

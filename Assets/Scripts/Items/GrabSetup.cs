@@ -32,14 +32,15 @@ public class GrabSetup : MonoBehaviour
         Debug.Log("i've been grabbed! says the tomato");
         rb.constraints = RigidbodyConstraints.None;
 
-        transform.SetParent(null);
-        parent.GetComponent<PlantPrefabSettings>().RemoveFromList(gameObject);
+        parent.GetComponent<PlantPrefabSettings>().harvestable.Remove(gameObject);
 
-        var vegToScale = GameObject.Find("Mesh").transform;
-        Debug.Log("scale before: " + vegToScale.transform.localScale);
+        /*var vegToScale = GameObject.Find("Mesh").transform;*/
+        var vegToScale = this.gameObject.transform.GetChild(0);
         vegToScale.transform.localScale = grabbedScale;
-        Debug.Log("scale after: " + vegToScale.transform.localScale);
+
         DropObject();
+        Debug.Log("RanDrop!");
+
     }
 
     private IEnumerator DropObject()
@@ -48,10 +49,16 @@ public class GrabSetup : MonoBehaviour
         yield return new WaitForSeconds(2);
         grabCode.enabled = false;
         grabCode.enabled = true;
-        if(parent.GetComponent<PlantPrefabSettings>().harvestable.Count == 0)
-            GameObject.Destroy(parent);
+        DestroyHeld();
+        if (parent.GetComponent<PlantPrefabSettings>().harvestable.Count == 0)
+        { GameObject.Destroy(parent); }
     }
 
-
+    private void DestroyHeld()
+    {
+        parent.GetComponent<PlantPrefabSettings>().harvestable.Remove(this.gameObject);
+        Destroy(gameObject);
+        
+    }
 
 }

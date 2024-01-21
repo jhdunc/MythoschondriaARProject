@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   itemInfo: {fileID: 11400000, guid: 7ae686ee1d8a9df4c91b2d87ad3b7357, type: 2}
+  setup: {fileID: 3849304275347617548}
 --- !u!114 &3849304275347617548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSize: 2
+  firstGrab: 0
+  parent: {fileID: 7881470689603173720}
 --- !u!54 &2899809055672735483
 Rigidbody:
   m_ObjectHideFlags: 0

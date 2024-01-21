@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1678673516667984617}
   - component: {fileID: 7450633766485876951}
   - component: {fileID: 4230755573475465137}
+  - component: {fileID: 8463421381271116799}
   m_Layer: 0
   m_Name: PotatoPrefab
   m_TagString: Untagged
@@ -74,6 +75,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8463421381271116799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041973173418555596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bc9880779ebba49a8e7935901ff6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harvestable:
+  - {fileID: 6524586003794680009}
 --- !u!1001 &854349103180030486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +182,11 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 8041973173418555596}
+    - target: {fileID: 46143217980013220, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
+        type: 3}
+      propertyPath: grabSize
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 522508645399888673, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
         type: 3}
       propertyPath: m_RootOrder
@@ -351,13 +371,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1927912097368836451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6524586003794680009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4632706139731251626, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927912097368836451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1901291817654350791 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 46143217980013220, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
     type: 3}
   m_PrefabInstance: {fileID: 1927912097368836451}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6524586003794680009}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3665e8a804dd924192aa4fa05ad4825, type: 3}
@@ -369,7 +395,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1927912097368836451}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6524586003794680009}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a956329695d1e34ca6df8356bb069d4, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6394649426454118002}
   - component: {fileID: 8513876251638206703}
   - component: {fileID: 1140890153206882440}
+  - component: {fileID: 4568437941958413324}
   m_Layer: 0
   m_Name: CarrotPrefab
   m_TagString: Untagged
@@ -73,6 +74,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4568437941958413324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619039765839263169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bc9880779ebba49a8e7935901ff6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harvestable:
+  - {fileID: 3506284813782834236}
 --- !u!1001 &460863868602724370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,76 +329,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6394649426454118002}
     m_Modifications:
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
+    - target: {fileID: 2872552095825504775, guid: 971c575a3e7be3f41b14171c8c5a5500,
         type: 3}
-      propertyPath: m_AttachTransform
+      propertyPath: parent
       value: 
-      objectReference: {fileID: 3075647785599093188}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8464341910975619066}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 3426987154740356891}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGrab
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddToInventory
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GrabSetup, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: RipeItem, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845528964001547129, guid: 971c575a3e7be3f41b14171c8c5a5500,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3506284813782834236}
     - target: {fileID: 7062466102227626433, guid: 971c575a3e7be3f41b14171c8c5a5500,
         type: 3}
       propertyPath: m_Name
@@ -460,36 +410,6 @@ GameObject:
 --- !u!4 &3805612702600226332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7384346898384016353, guid: 971c575a3e7be3f41b14171c8c5a5500,
-    type: 3}
-  m_PrefabInstance: {fileID: 5956636087896815101}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3426987154740356891 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9017651621697196774, guid: 971c575a3e7be3f41b14171c8c5a5500,
-    type: 3}
-  m_PrefabInstance: {fileID: 5956636087896815101}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3506284813782834236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a956329695d1e34ca6df8356bb069d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8464341910975619066 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2872552095825504775, guid: 971c575a3e7be3f41b14171c8c5a5500,
-    type: 3}
-  m_PrefabInstance: {fileID: 5956636087896815101}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3506284813782834236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3665e8a804dd924192aa4fa05ad4825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &3075647785599093188 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8648280914348309561, guid: 971c575a3e7be3f41b14171c8c5a5500,
     type: 3}
   m_PrefabInstance: {fileID: 5956636087896815101}
   m_PrefabAsset: {fileID: 0}

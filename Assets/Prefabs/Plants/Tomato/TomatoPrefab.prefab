@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8158808541799005534}
   - component: {fileID: 8158808541799005532}
   - component: {fileID: 4303656584242431751}
+  - component: {fileID: 1607647300141013850}
   m_Layer: 0
   m_Name: TomatoPrefab
   m_TagString: Untagged
@@ -33,8 +34,8 @@ Transform:
   - {fileID: 694972457033495705}
   - {fileID: 8172686964260926587}
   - {fileID: 2978655570423625455}
-  - {fileID: 7240442107398291228}
   - {fileID: 6792505424229073062}
+  - {fileID: 7240442107398291228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 12.892, y: 0, z: 0}
@@ -60,7 +61,7 @@ MonoBehaviour:
     type: 3}
   timer: {fileID: 6792505424229073063}
   growTomaat: {fileID: 4303656584242431751}
-  growTime: 15
+  growTime: 10
   growthActive: 0
 --- !u!135 &8158808541799005532
 SphereCollider:
@@ -91,6 +92,22 @@ MonoBehaviour:
   - {fileID: 2869497647335694045}
   - {fileID: 1660604880181269134}
   - {fileID: 1530818303615967292}
+--- !u!114 &1607647300141013850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158808541799005535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bc9880779ebba49a8e7935901ff6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harvestable:
+  - {fileID: 7064011272346622128}
+  - {fileID: 8665239651263041590}
+  - {fileID: 8512103860414605609}
 --- !u!1001 &757201876905656771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 6107387598365131109, guid: f12567b2ec35e074e850c8fc05967ed2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6107387598365131109, guid: f12567b2ec35e074e850c8fc05967ed2,
         type: 3}
@@ -746,7 +763,7 @@ PrefabInstance:
     - target: {fileID: 1532031569020280591, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1532031569020280591, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
@@ -798,10 +815,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2653164888650987143, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659470926566344024, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8158808541799005535}
     - target: {fileID: 3659470926566344024, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
       propertyPath: grabSize
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3659470926566344024, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
@@ -825,9 +852,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794873371612814177, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
-      propertyPath: grabSize
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8158808541799005535}
     - target: {fileID: 4794873371612814177, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
       propertyPath: grabScale
@@ -850,9 +877,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822992965111791641, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
-      propertyPath: grabSize
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8158808541799005535}
     - target: {fileID: 7822992965111791641, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
       propertyPath: grabScale
@@ -873,8 +900,27 @@ PrefabInstance:
       propertyPath: grabScale.z
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 63053187809305095, guid: c517e74f6ff9b4a4786a9abb5d1260b8, type: 3}
+    - target: {fileID: 7902776315765640230, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8158808541799005535}
+    - target: {fileID: 7902776315765640230, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: grabSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734354220941882680, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 8158808541799005535}
+    - target: {fileID: 8734354220941882680, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: grabSize
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c517e74f6ff9b4a4786a9abb5d1260b8, type: 3}
 --- !u!1 &6918554172877784380 stripped
 GameObject:
@@ -885,6 +931,24 @@ GameObject:
 --- !u!4 &7240442107398291228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1532031569020280591, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8158808542470610963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7064011272346622128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1383029459341375651, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8158808542470610963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8665239651263041590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 682564350489915429, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8158808542470610963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8512103860414605609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 511431755465247034, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
     type: 3}
   m_PrefabInstance: {fileID: 8158808542470610963}
   m_PrefabAsset: {fileID: 0}
