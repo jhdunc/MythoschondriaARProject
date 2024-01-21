@@ -10,6 +10,9 @@ public enum GrowthState
 
 public class PlantScript : MonoBehaviour
 {
+    [SerializeField] GameObject harvestTime;
+    private bool hasParticle;
+
     private int idSoil; // parent ID (soil plot, used for wet/dry communication)
     [SerializeField] ItemClass itemInfo;
     
@@ -179,19 +182,10 @@ public class PlantScript : MonoBehaviour
                     break;
             }
         }
-        if (currentState == GrowthState.Harvest)
+        if (currentState == GrowthState.Harvest && !hasParticle)
         {
-
-            // KRIS MAKE PARTICLE EFFECT GO BRRRRR HERE
-
-            // Set Up OBJECT: Set your particle system as a prefab
-            // Set Up OBJECT: Create variable: private GameObject readyParticle;
-            // CREATE OBJECT:
-            // use: Instantiate(readyParticle, this.transform, worldPositionStays:false);
-
-            // this is where you put the sparkle effect "turn on" code
-            // for when an item is ready to harvest
-
+            Instantiate(harvestTime, this.transform, worldPositionStays:false);
+            hasParticle = true;
         }
     }
 
