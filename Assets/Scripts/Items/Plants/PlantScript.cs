@@ -127,27 +127,33 @@ public class PlantScript : MonoBehaviour
 
     private IEnumerator GrowthCycle() // a coroutine to start the growth period for the plant
     {
-        growthActive = true; // set bool to indicate plant is now growing
-        timer.ResetTimer(0f);
-        timer.SetMaxTime(growTime);
-        yield return new WaitForSeconds(growTime); // wait a number of seconds equal to the variable growTime
+        if (currentState != GrowthState.Harvest)
+        {
+            growthActive = true; // set bool to indicate plant is now growing
+            timer.ResetTimer(0f);
+            timer.SetMaxTime(growTime);
+            yield return new WaitForSeconds(growTime); // wait a number of seconds equal to the variable growTime
 
-        // once timer has elapsed, check current state and advance to the next state.
-        if (currentState == GrowthState.Seeded)
-        {
-            ChangeState(GrowthState.Sprout);
-            GameEvents.current.SoilDry(idSoil);
+            // once timer has elapsed, check current state and advance to the next state.
+            if (currentState == GrowthState.Seeded)
+            {
+                ChangeState(GrowthState.Sprout);
+                GameEvents.current.SoilDry(idSoil);
+            }
+            else if (currentState == GrowthState.Sprout)
+            {
+                ChangeState(GrowthState.Growing);
+                GameEvents.current.SoilDry(idSoil);
+            }
+            else if (currentState == GrowthState.Growing)
+            {
+                ChangeState(GrowthState.Harvest);
+                GameEvents.current.SoilDry(idSoil);
+
+            }
         }
-        else if (currentState == GrowthState.Sprout)
-        {
-            ChangeState(GrowthState.Growing);
-            GameEvents.current.SoilDry(idSoil);
-        }
-        else if (currentState == GrowthState.Growing)
-        {
-            ChangeState(GrowthState.Harvest);
-            GameEvents.current.SoilDry(idSoil);
-        }
+
+
     }
     private void Update()
     {
@@ -166,13 +172,26 @@ public class PlantScript : MonoBehaviour
                     {
                         growing.transform.localScale += growSproutScalar * Time.deltaTime;
                     }
-                    if(growing.transform.localScale.x >= 1)
+                    if (growing.transform.localScale.x >= 1 && growTomaat != null)
                     {
-                        if (growTomaat != null)
                         growTomaat.StartGrowing();
                     }
                     break;
             }
+        }
+        if (currentState == GrowthState.Harvest)
+        {
+
+            // KRIS MAKE PARTICLE EFFECT GO BRRRRR HERE
+
+            // Set Up OBJECT: Set your particle system as a prefab
+            // Set Up OBJECT: Create variable: private GameObject readyParticle;
+            // CREATE OBJECT:
+            // use: Instantiate(readyParticle, this.transform, worldPositionStays:false);
+
+            // this is where you put the sparkle effect "turn on" code
+            // for when an item is ready to harvest
+
         }
     }
 

@@ -134,6 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532031569020280591}
+  - component: {fileID: 9182297402018478123}
   m_Layer: 0
   m_Name: TomatoRipe
   m_TagString: Untagged
@@ -159,6 +160,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9182297402018478123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241389830954247471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bc9880779ebba49a8e7935901ff6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harvestable:
+  - {fileID: 1383029459341375651}
+  - {fileID: 5013680310065787517}
+  - {fileID: 8480846682600603385}
 --- !u!1 &1383029459341375651
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSize: 3
+  firstGrab: 0
+  parent: {fileID: 1241389830954247471}
 --- !u!54 &5649837095246549194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -397,6 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   itemInfo: {fileID: 11400000, guid: fdaa9292f29fe604ab2684e5ca517c30, type: 2}
+  setup: {fileID: 3659470926566344024}
 --- !u!1 &3657228372899014538
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSize: 3
+  firstGrab: 0
+  parent: {fileID: 0}
 --- !u!54 &7341642135034715654
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -723,6 +745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   itemInfo: {fileID: 11400000, guid: fdaa9292f29fe604ab2684e5ca517c30, type: 2}
+  setup: {fileID: 0}
 --- !u!1 &6319363608230705873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1038,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSize: 3
+  firstGrab: 0
+  parent: {fileID: 0}
 --- !u!54 &6500617722265174651
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1204,3 +1229,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   itemInfo: {fileID: 11400000, guid: fdaa9292f29fe604ab2684e5ca517c30, type: 2}
+  setup: {fileID: 0}

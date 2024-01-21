@@ -10,10 +10,13 @@ public class GrabSetup : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] float grabSize;
     private Vector3 grabbedScale;
+    public bool firstGrab;
+    public GameObject parent;
 
 
     void Start()
     {
+        firstGrab = false;
         rb = GetComponent<Rigidbody>();
         interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
         GetComponent<XRGrabInteractable>().interactionManager = interactionManager;
@@ -24,18 +27,31 @@ public class GrabSetup : MonoBehaviour
     }
     public void OnGrab()
     {
-
+        if (firstGrab == false)
+        { firstGrab = true; }
         Debug.Log("i've been grabbed! says the tomato");
         rb.constraints = RigidbodyConstraints.None;
+
         transform.SetParent(null);
+        parent.GetComponent<PlantPrefabSettings>().RemoveFromList(gameObject);
 
-        // UP FOR GRABS
-        // WHY IS THIS NO WORK
-        Debug.Log("scale before: " + gameObject.transform.localScale);
-        gameObject.transform.localScale = grabbedScale;
-        Debug.Log("scale after: " + gameObject.transform.localScale);
-
+        var vegToScale = GameObject.Find("Mesh").transform;
+        Debug.Log("scale before: " + vegToScale.transform.localScale);
+        vegToScale.transform.localScale = grabbedScale;
+        Debug.Log("scale after: " + vegToScale.transform.localScale);
+        DropObject();
     }
+
+    private IEnumerator DropObject()
+    {
+        var grabCode = GetComponent<XRGrabInteractable>();
+        yield return new WaitForSeconds(2);
+        grabCode.enabled = false;
+        grabCode.enabled = true;
+        if(parent.GetComponent<PlantPrefabSettings>().harvestable.Count == 0)
+            GameObject.Destroy(parent);
+    }
+
 
 
 }
