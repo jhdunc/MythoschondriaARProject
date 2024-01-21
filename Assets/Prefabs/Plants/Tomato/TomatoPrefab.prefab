@@ -815,6 +815,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831066402203257799, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2653164888650987143, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
       propertyPath: m_RootOrder
@@ -875,6 +880,41 @@ PrefabInstance:
       propertyPath: grabScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7539235117838484284, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539235117838484284, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539235117838484284, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 580755201213764907}
+    - target: {fileID: 7539235117838484284, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539235117838484284, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539235117838484284, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GrabSetup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539235117838484284, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7822992965111791641, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
         type: 3}
       propertyPath: parent
@@ -920,6 +960,11 @@ PrefabInstance:
       propertyPath: grabSize
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8956000521261944557, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c517e74f6ff9b4a4786a9abb5d1260b8, type: 3}
 --- !u!1 &6918554172877784380 stripped
@@ -946,6 +991,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8158808542470610963}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &580755201213764907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8734354220941882680, guid: c517e74f6ff9b4a4786a9abb5d1260b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8158808542470610963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665239651263041590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3665e8a804dd924192aa4fa05ad4825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8512103860414605609 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 511431755465247034, guid: c517e74f6ff9b4a4786a9abb5d1260b8,

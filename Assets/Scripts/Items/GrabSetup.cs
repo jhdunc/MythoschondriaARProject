@@ -10,13 +10,13 @@ public class GrabSetup : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] float grabSize;
     private Vector3 grabbedScale;
-    public bool firstGrab;
+    public bool unGrabbed;
     public GameObject parent;
 
 
     void Start()
     {
-        firstGrab = false;
+        unGrabbed = true;
         rb = GetComponent<Rigidbody>();
         interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
         GetComponent<XRGrabInteractable>().interactionManager = interactionManager;
@@ -27,8 +27,14 @@ public class GrabSetup : MonoBehaviour
     }
     public void OnGrab()
     {
-        if (firstGrab == false)
-        { firstGrab = true; }
+        RipeItem invScr = GetComponent<RipeItem>();
+        
+
+        if (unGrabbed == true)
+        { 
+            invScr.AddToInventory(); 
+            unGrabbed = false; 
+        }
         Debug.Log("i've been grabbed! says the tomato");
         rb.constraints = RigidbodyConstraints.None;
 
@@ -56,7 +62,6 @@ public class GrabSetup : MonoBehaviour
 
     private void DestroyHeld()
     {
-        parent.GetComponent<PlantPrefabSettings>().harvestable.Remove(this.gameObject);
         Destroy(gameObject);
         
     }
