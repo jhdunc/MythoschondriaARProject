@@ -61,7 +61,7 @@ public class RecipeClipboard : MonoBehaviour
             {
                 if (veggie.Key == recipe.ingredient[i])//check if veggie key is the recipe ingredient
                 {
-                    if (veggie.Value == recipe.quantity[i])//Check if veggie amount is correct
+                    if (veggie.Value >= recipe.quantity[i])//Check if veggie amount is correct
                     {
                         //Do if the correct ingredient and correct amount is there
                         if (i < recipe.ingredient.Count)//If not checked all
