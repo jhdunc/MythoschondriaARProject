@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tomaat
   itemID: 3
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c8d5253ea790d7e4db6c9593e5ff6f35, type: 3}

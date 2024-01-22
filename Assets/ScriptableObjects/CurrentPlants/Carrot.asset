@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wortel
   itemID: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e6f2936bb95c65c4a8d9c8bf91f137ac, type: 3}
