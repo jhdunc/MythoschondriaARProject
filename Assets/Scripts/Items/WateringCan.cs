@@ -16,6 +16,10 @@ public class WateringCan : MonoBehaviour
 
     void Update()
     {
+
         em.enabled = Vector3.Angle(Vector3.down, transform.right) <= angleOfCan; // the particles will only be visable when the object is transformed to a specific angle 
+        if (em.enabled)
+            FindObjectOfType<AudioManager>().Play("Watering"); // plays water SFX
+
     }
 }

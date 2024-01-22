@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Ambience
-    clip: {fileID: 8300000, guid: 9269daf3c59b6d6439ae57b9f98bade0, type: 3}
+    clip: {fileID: 8300000, guid: 2e719767302a97140baaf1c15280f933, type: 3}
     volume: 0.5
     pitch: 1
     loop: 1
@@ -16809,6 +16809,75 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &7106538313058988284
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.073
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683202, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106538313101683207, guid: 4a67fcedff884d2439b003c06f0ab1cc,
+        type: 3}
+      propertyPath: m_Name
+      value: harvestTime
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a67fcedff884d2439b003c06f0ab1cc, type: 3}
 --- !u!1 &7199635953494190766
 GameObject:
   m_ObjectHideFlags: 0
