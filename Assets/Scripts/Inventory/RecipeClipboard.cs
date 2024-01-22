@@ -53,28 +53,39 @@ public class RecipeClipboard : MonoBehaviour
         }
 
     }
-    private void CheckRecipe()
-    {
-        // JEREMY
-        // JAERMY
-        //JAMMY//JAMMY//JAMMY//JAMMY//JAMMY//
-
-        // put code here to check if player has all items they need for the recipe.
-        // can put button disable here too if player doesn't have everything
-        //if garInv = recipe.quantity then kitchenButton.interactable = true
-
+    private void CheckRecipe() // put code here to check if player has all items they need for the recipe.
+    {     
         foreach (var veggie in inventory.gardenInventory) //for all veggies in the inventory
         {
             for (int i = 0; i < recipe.ingredient.Count; i++) //look trough ingredients
             {
                 if (veggie.Key == recipe.ingredient[i])//check if veggie key is the recipe ingredient
                 {
-                    //Do if the ingredient is there
-                    //veggie.Value tells how much is there
+                    if (veggie.Value == recipe.quantity[i])//Check if veggie amount is correct
+                    {
+                        //Do if the correct ingredient and correct amount is there
+                        if (i < recipe.ingredient.Count)//If not checked all
+                        {
+                            continue;
+                        }
+                        else //if checked all
+                        {
+                            kitchenButton.interactable = true;
+                        }
+                    }
+                    else //Not enough, no button
+                    {
+                        kitchenButton.interactable = false;
+                        return; //quit CheckRecipe
+                    }
                 }
+                else //No veggies, no button
+                {
+                    kitchenButton.interactable = false;
+                    break; //try other veggie
+                }                
             }
         }
-
     }
 
     public void SendToKitchen() // method to call via button
