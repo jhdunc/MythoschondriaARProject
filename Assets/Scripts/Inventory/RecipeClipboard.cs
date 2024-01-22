@@ -18,6 +18,8 @@ public class RecipeClipboard : MonoBehaviour
 
     private void Start()
     {
+        GameEvents.current.onCheckRecipe += CheckRecipe;
+
         kitchenButton.interactable = false; // cannot interact with the kitchen button. Also activates the "disabled" color tint.
         garInv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<ItemDictionaries>().gardenInventory; // set reference to inventory of veggies collected
 
@@ -37,12 +39,16 @@ public class RecipeClipboard : MonoBehaviour
 
             gridParent.transform.Find($"Ingredient{i}/TextName").GetComponent<TextMeshProUGUI>().text = ingredient.itemName; // Find the prefab's text field for item name and change it to match the item name of this ingredient
             gridParent.transform.Find($"Ingredient{i}/ItemNeeded").GetComponent<TextMeshProUGUI>().text = recipe.quantity[i].ToString(); // Find the prefab's text field for Quantity needed, and update to match qty from the recipe (requires being turned into a string)
-
+            
         }
 
     }
     private void Update()
     {
+/*        if(Input.GetKeyDown(KeyCode.Space))
+        { 
+        CheckRecipe();
+        }*/
         for (int i = 0; i < recipe.ingredient.Count; i++) // loop through the ingredient list
         {
             foreach (var item in garInv) // for every item in the garden inventory:
@@ -55,26 +61,23 @@ public class RecipeClipboard : MonoBehaviour
     }
     public void CheckRecipe()
     {
-        // JEREMY
-        // JAERMY
-        //JAMMY//JAMMY//JAMMY//JAMMY//JAMMY//
-
-        // put code here to check if player has all items they need for the recipe.
-        // can put button disable here too if player doesn't have everything
-        //if garInv = recipe.quantity then kitchenButton.interactable = true
-
-        foreach (var veggie in inventory.gardenInventory) //for all veggies in the inventory
+        int trueCount = 0;
+        foreach (var veggie in inventory.gardenInventory) // so far so good
         {
-            for (int i = 0; i < recipe.ingredient.Count; i++) //look trough ingredients
+            for (int i = 0; i < recipe.ingredient.Count; i++) // for every ingredient in the recipe list, still good
             {
-                if (veggie.Key == recipe.ingredient[i])//check if veggie key is the recipe ingredient
+                if (veggie.Key == recipe.ingredient[i]) // still good, checks Key (name in inventory) against ingredients in list
                 {
-                    //Do if the ingredient is there
-                    //veggie.Value tells how much is there
+                    if (veggie.Value >= recipe.quantity[i])
+                    {
+                        trueCount += 1;
+                        if (trueCount == recipe.ingredient.Count)
+                        { kitchenButton.interactable = true; }
+                        else { kitchenButton.interactable = false; }
+                    }
                 }
             }
         }
-
     }
 
     public void SendToKitchen() // method to call via button
@@ -87,5 +90,9 @@ public class RecipeClipboard : MonoBehaviour
             inventory.AddToKitchenList(item[i], qty[i]); // call method from ItemDictionaries.cs
         }
         CheckRecipe();
+    }
+    private void OnDestroy()
+    {
+        GameEvents.current.onCheckRecipe -= CheckRecipe;
     }
 }
