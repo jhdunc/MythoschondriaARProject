@@ -63,7 +63,6 @@ public class PlantScript : MonoBehaviour
                 growthActive = false;
                 break;
             case GrowthState.Sprout:
-                seeded.SetActive(false);
                 sprout.SetActive(true);
                 sprout.transform.localScale = new Vector3(.4f, .4f, .4f);
                 growthActive = false;
