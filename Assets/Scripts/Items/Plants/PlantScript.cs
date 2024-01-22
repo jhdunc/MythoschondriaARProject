@@ -12,6 +12,7 @@ public class PlantScript : MonoBehaviour
 {
     [SerializeField] GameObject harvestTime;
     private bool hasParticle;
+    private ParticleSystem shinyThing;
 
     private int idSoil; // parent ID (soil plot, used for wet/dry communication)
     [SerializeField] ItemClass itemInfo;
@@ -183,16 +184,21 @@ public class PlantScript : MonoBehaviour
         }
         if (currentState == GrowthState.Harvest && !hasParticle)
         {
-            Instantiate(harvestTime, gameObject.transform, worldPositionStays:false);
+            GameObject newParticle = Instantiate(harvestTime, gameObject.transform, worldPositionStays:false);
             hasParticle = true;
+            
+            newParticle.name = "ShinyThing";
+            shinyThing = GameObject.Find("ShinyThing").GetComponent<ParticleSystem>();
         }
         if (currentState == GrowthState.Harvest && hasParticle)
         {
-
+            shinyThing.Play();
         }
-
-
-
+        if (hasParticle && currentState != GrowthState.Harvest)
+        {
+            shinyThing.Stop();
+        }
     }
-
+    public void StopParticle()
+    { shinyThing.Stop(); }
 }

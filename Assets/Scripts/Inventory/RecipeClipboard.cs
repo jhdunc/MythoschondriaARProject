@@ -53,7 +53,7 @@ public class RecipeClipboard : MonoBehaviour
         }
 
     }
-    private void CheckRecipe()
+    public void CheckRecipe()
     {
         // JEREMY
         // JAERMY
