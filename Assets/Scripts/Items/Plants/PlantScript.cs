@@ -183,9 +183,16 @@ public class PlantScript : MonoBehaviour
         }
         if (currentState == GrowthState.Harvest && !hasParticle)
         {
-            Instantiate(harvestTime, this.transform, worldPositionStays:false);
+            Instantiate(harvestTime, gameObject.transform, worldPositionStays:false);
             hasParticle = true;
         }
+        if (currentState == GrowthState.Harvest && hasParticle)
+        {
+
+        }
+
+
+
     }
 
 }
