@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8fa5093529d3340b2c35c0ec55476d, type: 3}
   m_Name: CarrotPotatoStew
   m_EditorClassIdentifier: 
-  recipeName: Carrot Tomato Soup
+  recipeName: Wortel-Tomatensoep
   ingredient:
   - {fileID: 11400000, guid: 48d6767a2a15c44469e8e12d52b796e1, type: 2}
   - {fileID: 11400000, guid: fdaa9292f29fe604ab2684e5ca517c30, type: 2}

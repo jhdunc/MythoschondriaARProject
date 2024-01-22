@@ -17,7 +17,7 @@ public class RipeItem : MonoBehaviour
     }
     public void AddToInventory() // add to XR Grab Interactable event Select Entered.
     {
-        if(setup.firstGrab== false)
+        if(setup.unGrabbed == true)
         inventory.AddToGardenList(itemInfo, 1);
     }
 

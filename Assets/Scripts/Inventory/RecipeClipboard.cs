@@ -61,7 +61,6 @@ public class RecipeClipboard : MonoBehaviour
 
         // put code here to check if player has all items they need for the recipe.
         // can put button disable here too if player doesn't have everything
-
         //if garInv = recipe.quantity then kitchenButton.interactable = true
 
         foreach (var veggie in inventory.gardenInventory) //for all veggies in the inventory
@@ -75,6 +74,7 @@ public class RecipeClipboard : MonoBehaviour
                 }
             }
         }
+
     }
 
     public void SendToKitchen() // method to call via button
