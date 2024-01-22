@@ -10,6 +10,10 @@ public enum GrowthState
 
 public class PlantScript : MonoBehaviour
 {
+    [SerializeField] GameObject harvestTime;
+    private bool hasParticle;
+    private ParticleSystem shinyThing;
+
     private int idSoil; // parent ID (soil plot, used for wet/dry communication)
     [SerializeField] ItemClass itemInfo;
     
@@ -63,7 +67,6 @@ public class PlantScript : MonoBehaviour
                 growthActive = false;
                 break;
             case GrowthState.Sprout:
-                seeded.SetActive(false);
                 sprout.SetActive(true);
                 sprout.transform.localScale = new Vector3(.4f, .4f, .4f);
                 growthActive = false;
@@ -179,20 +182,23 @@ public class PlantScript : MonoBehaviour
                     break;
             }
         }
-        if (currentState == GrowthState.Harvest)
+        if (currentState == GrowthState.Harvest && !hasParticle)
         {
-
-            // KRIS MAKE PARTICLE EFFECT GO BRRRRR HERE
-
-            // Set Up OBJECT: Set your particle system as a prefab
-            // Set Up OBJECT: Create variable: private GameObject readyParticle;
-            // CREATE OBJECT:
-            // use: Instantiate(readyParticle, this.transform, worldPositionStays:false);
-
-            // this is where you put the sparkle effect "turn on" code
-            // for when an item is ready to harvest
-
+            GameObject newParticle = Instantiate(harvestTime, gameObject.transform, worldPositionStays:false);
+            hasParticle = true;
+            
+            newParticle.name = "ShinyThing";
+            shinyThing = GameObject.Find("ShinyThing").GetComponent<ParticleSystem>();
+        }
+        if (currentState == GrowthState.Harvest && hasParticle)
+        {
+            shinyThing.Play();
+        }
+        if (hasParticle && currentState != GrowthState.Harvest)
+        {
+            shinyThing.Stop();
         }
     }
-
+    public void StopParticle()
+    { shinyThing.Stop(); }
 }
