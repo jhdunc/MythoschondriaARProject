@@ -24,6 +24,7 @@ public class PlantScript : MonoBehaviour
     public GameObject sprout;
     public GameObject growing;
     public GameObject harvest;
+    public ParticleSystem poof;
 
     [SerializeField] GameObject timerPrefab; // UI prefab for the timer bar
 
@@ -58,6 +59,7 @@ public class PlantScript : MonoBehaviour
     void ChangeState(GrowthState newState) // a method to call when changing the plant's state. When called, will use one of the enum list things as the newState
     {
         currentState = newState; // set current state to the paramater used to call the method
+        Instantiate(poof);
         switch (currentState) // use switch cases to determine behavior based on state.
         {
             // each case sets the previous state as inactive and the new state as active
@@ -84,6 +86,7 @@ public class PlantScript : MonoBehaviour
             default:
                 break;
         }
+        Destroy (poof);
     }
 
     private void OnTriggerEnter(Collider other)

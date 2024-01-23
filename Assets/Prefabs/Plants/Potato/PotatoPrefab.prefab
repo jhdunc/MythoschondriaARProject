@@ -58,6 +58,7 @@ MonoBehaviour:
   sprout: {fileID: 1971335173471445694}
   growing: {fileID: 7066139304494901409}
   harvest: {fileID: 1642357707577544952}
+  poof: {fileID: 8508008252628341059, guid: 0a3e75eb97932ad4f85739f84630eede, type: 3}
   timerPrefab: {fileID: 6107387598365131097, guid: f12567b2ec35e074e850c8fc05967ed2,
     type: 3}
   timer: {fileID: 5623632258374129370}
