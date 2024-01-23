@@ -19,10 +19,8 @@ public class KnifeBehavior : MonoBehaviour
 
             // Get the position and rotation of the vegetable
             Vector3 vegetablePosition = collision.gameObject.transform.position;
-            Quaternion vegetableRotation = collision.gameObject.transform.rotation;
-            Quaternion bowlRotation = vegetableRotation;
-            vegetableRotation *= Quaternion.Euler(-90f, 0f, 0f);
-            bowlRotation *= Quaternion.Euler(0f, 0f, 0f);
+            collision.gameObject.transform.rotation = Quaternion.Euler(76f, 29f, 58f);
+            Quaternion bowlRotation = Quaternion.Euler(180f, 0f, -170f);
 
             // Destroy the current vegetable
             Destroy(collision.gameObject.gameObject);
