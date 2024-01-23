@@ -12,14 +12,18 @@ public class WateringCan : MonoBehaviour
     {
         spillLiquid = GetComponent<ParticleSystem>(); // if spill liquid is occuring use the particle system attached to the watering can 
         em = spillLiquid.emission;
-        FindObjectOfType<AudioManager>().Play("Watering"); // plays water SFX
-
+        
     }
 
     void Update()
     {
 
         em.enabled = Vector3.Angle(Vector3.down, transform.right) <= angleOfCan; // the particles will only be visable when the object is transformed to a specific angle 
+        if (Vector3.Angle(Vector3.down, transform.right) <= angleOfCan)
+        {
+            FindObjectOfType<AudioManager>().Play("Watering"); // plays water SFX
 
+        }
+        else FindObjectOfType<AudioManager>().CancelInvoke("Watering");
     }
 }
