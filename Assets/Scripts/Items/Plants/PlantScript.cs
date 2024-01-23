@@ -184,9 +184,9 @@ public class PlantScript : MonoBehaviour
         }
         if (currentState == GrowthState.Harvest && !hasParticle)
         {
-            GameObject newParticle = Instantiate(harvestTime, gameObject.transform, worldPositionStays:false);
+            GameObject newParticle = Instantiate(harvestTime, new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z), Quaternion.identity);
             hasParticle = true;
-            
+
             newParticle.name = "ShinyThing";
             shinyThing = GameObject.Find("ShinyThing").GetComponent<ParticleSystem>();
         }
