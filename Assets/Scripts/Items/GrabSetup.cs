@@ -52,10 +52,6 @@ public class GrabSetup : MonoBehaviour
         { parent.GetComponent<PlantScript>().DestroyPlantPrefab(); }
     }
 
-    private void DestroyHeld()
-    {
-        Destroy(gameObject);
-    }
 
 
 }

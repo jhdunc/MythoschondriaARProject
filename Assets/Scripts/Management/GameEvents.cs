@@ -17,7 +17,6 @@ public class GameEvents : MonoBehaviour
     public event Action onWatered;
     public event Action onCheckRecipe;
 
-    public event Action onTimeSkip;
     public void SoilDry(int id)
     {
         if (onSoilDry != null)
