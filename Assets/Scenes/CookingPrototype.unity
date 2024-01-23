@@ -3618,5 +3618,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 3882506595786565922, guid: 1f6f0c889cae96c42b4ef32690c91a35,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.579228
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882506595786565922, guid: 1f6f0c889cae96c42b4ef32690c91a35,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.40557975
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882506595786565922, guid: 1f6f0c889cae96c42b4ef32690c91a35,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.40557975
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882506595786565922, guid: 1f6f0c889cae96c42b4ef32690c91a35,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.579228
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882506595786565922, guid: 1f6f0c889cae96c42b4ef32690c91a35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882506595786565922, guid: 1f6f0c889cae96c42b4ef32690c91a35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6f0c889cae96c42b4ef32690c91a35, type: 3}
