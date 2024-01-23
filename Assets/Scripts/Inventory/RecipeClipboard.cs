@@ -39,7 +39,7 @@ public class RecipeClipboard : MonoBehaviour
 
             gridParent.transform.Find($"Ingredient{i}/TextName").GetComponent<TextMeshProUGUI>().text = ingredient.itemName; // Find the prefab's text field for item name and change it to match the item name of this ingredient
             gridParent.transform.Find($"Ingredient{i}/ItemNeeded").GetComponent<TextMeshProUGUI>().text = recipe.quantity[i].ToString(); // Find the prefab's text field for Quantity needed, and update to match qty from the recipe (requires being turned into a string)
-            
+            gridParent.transform.Find($"Ingredient{i}/ItemIcon").GetComponent<Image>().sprite = ingredient.icon; // Find the prefab's item image field for item icon and change it to match the item icon of this ingredient
         }
 
     }

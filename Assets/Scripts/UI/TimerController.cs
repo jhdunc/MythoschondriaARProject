@@ -38,7 +38,7 @@ public class TimerController : MonoBehaviour
         if (timeElapsed < maxTime && parentPlantScript.growthActive)
         {
             timerUI.SetActive(true);
-            statusTextHolder.GetComponent<TextMeshProUGUI>().text = "Growing";
+            statusTextHolder.GetComponent<TextMeshProUGUI>().text = "Groeien";
             timeElapsed += Time.deltaTime;
             slider.GetComponent<Slider>().value = timeElapsed;
         }
