@@ -18,8 +18,11 @@ public class ItemRespawn : MonoBehaviour
         
         if (collision.gameObject.tag == "Terrain") // if the collision has tag Terrain
         {
+            Rigidbody toolRigidbody = gameObject.GetComponent<Rigidbody>(); // save the rigidbody component of the object
+            toolRigidbody.isKinematic = true; // enable "Is Kinematic" in order to prevent funky collisions during respawn
             gameObject.transform.position = startPos; // reset object position
             gameObject.transform.rotation = startRot; // reset object rotation
+            toolRigidbody.isKinematic = false; // disable "Is Kinematic"
         }
     }
 }

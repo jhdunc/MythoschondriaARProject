@@ -8,6 +8,11 @@ TagManager:
   - Tool
   - Terrain
   - Inventory
+  - Carrot
+  - Beet
+  - Tomato
+  - Potato
+  - Knife
   layers:
   - Default
   - TransparentFX
