@@ -10,7 +10,12 @@ public enum GrowthState
 
 public class PlantScript : MonoBehaviour
 {
-    private int id;
+    [SerializeField] GameObject harvestTime;
+    private bool hasParticle;
+    private ParticleSystem shinyThing;
+
+    private int idSoil; // parent ID (soil plot, used for wet/dry communication)
+    [SerializeField] ItemClass itemInfo;
     
     public GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
@@ -20,7 +25,7 @@ public class PlantScript : MonoBehaviour
     public GameObject growing;
     public GameObject harvest;
 
-    [SerializeField] GameObject timerPrefab;
+    [SerializeField] GameObject timerPrefab; // UI prefab for the timer bar
 
     private Vector3 growSproutScalar;
     [SerializeField] TimerController timer;
@@ -38,8 +43,8 @@ public class PlantScript : MonoBehaviour
         growing.SetActive(false);
         harvest.SetActive(false);
 
-        id = transform.parent.GetComponent<SoilScript>().id;
-        Debug.Log("Parent ID = " + id);
+        idSoil = transform.parent.GetComponent<SoilScript>().id;
+        Debug.Log("Parent ID = " + idSoil);
 
         ChangeState(GrowthState.Seeded); // when instantiated, change growth state to Seeded
 
@@ -62,7 +67,6 @@ public class PlantScript : MonoBehaviour
                 growthActive = false;
                 break;
             case GrowthState.Sprout:
-                seeded.SetActive(false);
                 sprout.SetActive(true);
                 sprout.transform.localScale = new Vector3(.4f, .4f, .4f);
                 growthActive = false;
@@ -126,27 +130,33 @@ public class PlantScript : MonoBehaviour
 
     private IEnumerator GrowthCycle() // a coroutine to start the growth period for the plant
     {
-        growthActive = true; // set bool to indicate plant is now growing
-        timer.ResetTimer(0f);
-        timer.SetMaxTime(growTime);
-        yield return new WaitForSeconds(growTime); // wait a number of seconds equal to the variable growTime
+        if (currentState != GrowthState.Harvest)
+        {
+            growthActive = true; // set bool to indicate plant is now growing
+            timer.ResetTimer(0f);
+            timer.SetMaxTime(growTime);
+            yield return new WaitForSeconds(growTime); // wait a number of seconds equal to the variable growTime
 
-        // once timer has elapsed, check current state and advance to the next state.
-        if (currentState == GrowthState.Seeded)
-        {
-            ChangeState(GrowthState.Sprout);
-            GameEvents.current.SoilDry(id);
+            // once timer has elapsed, check current state and advance to the next state.
+            if (currentState == GrowthState.Seeded)
+            {
+                ChangeState(GrowthState.Sprout);
+                GameEvents.current.SoilDry(idSoil);
+            }
+            else if (currentState == GrowthState.Sprout)
+            {
+                ChangeState(GrowthState.Growing);
+                GameEvents.current.SoilDry(idSoil);
+            }
+            else if (currentState == GrowthState.Growing)
+            {
+                ChangeState(GrowthState.Harvest);
+                GameEvents.current.SoilDry(idSoil);
+
+            }
         }
-        else if (currentState == GrowthState.Sprout)
-        {
-            ChangeState(GrowthState.Growing);
-            GameEvents.current.SoilDry(id);
-        }
-        else if (currentState == GrowthState.Growing)
-        {
-            ChangeState(GrowthState.Harvest);
-            GameEvents.current.SoilDry(id);
-        }
+
+
     }
     private void Update()
     {
@@ -165,13 +175,30 @@ public class PlantScript : MonoBehaviour
                     {
                         growing.transform.localScale += growSproutScalar * Time.deltaTime;
                     }
-                    if(growing.transform.localScale.x >= 1)
+                    if (growing.transform.localScale.x >= 1 && growTomaat != null)
                     {
                         growTomaat.StartGrowing();
                     }
                     break;
             }
         }
+        if (currentState == GrowthState.Harvest && !hasParticle)
+        {
+            GameObject newParticle = Instantiate(harvestTime, gameObject.transform, worldPositionStays:false);
+            hasParticle = true;
+            
+            newParticle.name = "ShinyThing";
+            shinyThing = GameObject.Find("ShinyThing").GetComponent<ParticleSystem>();
+        }
+        if (currentState == GrowthState.Harvest && hasParticle)
+        {
+            shinyThing.Play();
+        }
+        if (hasParticle && currentState != GrowthState.Harvest)
+        {
+            shinyThing.Stop();
+        }
     }
-
+    public void StopParticle()
+    { shinyThing.Stop(); }
 }

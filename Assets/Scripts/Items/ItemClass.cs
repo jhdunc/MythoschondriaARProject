@@ -10,7 +10,7 @@ public class ItemClass : ScriptableObject
     // adding variables here will add that variable to all scriptable objects
     public string itemName;
     public int itemID;
-    public Image icon;
+    public Sprite icon;
     
 }
 

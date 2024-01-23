@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class SoilScript : MonoBehaviour
 {
-    public int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
+    public static int[] seedPlacement = new int[12];//Add what seed(ID) had been planted where(ID) on an array
+    public static object[] plantPlacement = new object[12];//Add what plant(instance as child) had been planted where(ID) on an array
 
     public int id; // set in inspector - specific to plot
 
@@ -21,6 +22,13 @@ public class SoilScript : MonoBehaviour
     // bools to control whether or not actions can be taken based on current plot state
     private bool tilled;
     private bool plotFull;
+
+
+    //On instantiate plant as child
+    //Locate child, put in list
+    //plantPlacement.SetValue(savePlantItemID,id);
+
+
     private void Start()
     {
 
@@ -56,9 +64,9 @@ public class SoilScript : MonoBehaviour
                 {
                     case 100: // if item is a Hoe:
                         Debug.Log("Hoe has been used"); // debug to confirm Hoe recognition working
-                        enterState.SetActive(false); // deactivate the tilled soil game object
-                        tilledState.SetActive(true); // set tilled soil game object to active
-                        
+                        FindObjectOfType<AudioManager>().Play("Dig"); // digging SFX plays
+                        SetTilled(); // change game object to tilled
+
                         tilled = true; // set bool to indicate the soil has been tilled
                         plotFull = false; // set bool to indicate there is no longer a plant here
 
@@ -67,8 +75,8 @@ public class SoilScript : MonoBehaviour
 
                     case 101: // if item is a Trowel
                         Debug.Log("Trowel has been used"); // debug to confirm Trowel recognition working
-                        enterState.SetActive(false); // deactivate the tilled soil game object
-                        tilledState.SetActive(true); // set tilled soil game object to active
+                        FindObjectOfType<AudioManager>().Play("Dig"); //digging SFX plays
+                        SetTilled();
 
                         tilled = true; // set bool to indicate the soil has been tilled
                         plotFull = false; // set bool to indicate there is no longer a plant here
@@ -79,8 +87,7 @@ public class SoilScript : MonoBehaviour
 
                     case 102: // if item is a Watering Can
                         Debug.Log("Water has been used"); // debug to confirm WateringCan recognition working
-                        enterState.GetComponent<Renderer>().material.color = wetColor; // set color of untilled to wet
-                        tilledState.GetComponent<Renderer>().material.color = wetColor; // set color of tilled to wet
+                        SoilWet(this.id); //  call method to make soil Wet
                         break;
                 }
 
@@ -93,7 +100,9 @@ public class SoilScript : MonoBehaviour
                 // Tell the Plot what seed is being planted
                 if (tilled == true && !plotFull) // check that the soil has been tilled and does not already have a plant growing
                 {
+                    FindObjectOfType<AudioManager>().Play("Pop"); // planted SFX plays
                     plotFull = true; // switch bool to indicate a plant is now growing in the soil
+                    SetUntilled(); // change game object to untilled
                     
                     // create instance of the plant that the seed should grow
                     // code means: Make a Game Object(get the variable plantPrefab from SeedInfo attached to colliding object, make the object of this script the parent, set location relative to parent)
@@ -102,19 +111,44 @@ public class SoilScript : MonoBehaviour
                     seedPlacement.SetValue(saveSeedItemID,id);//Add saved seed ID to an array at the spot of soil id
 
                     Destroy(otherObj); // destroy the seed GameObject
-                    enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
-                    tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
+                    SoilDry(this.id);
+
                 }
             }
         }
     }
     private void SoilDry(int id)
     {
-        if(id == this.id)
-        { 
-        enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
-        tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
+        if (id == this.id)
+        {
+            enterState.GetComponent<Renderer>().material.color = dryColor; // change untilled soil to unwatered
+            tilledState.GetComponent<Renderer>().material.color = dryColor; // change tilled soil to unwatered
         }
+    }
+    private void SoilWet(int id)
+    {
+        if (id == this.id)
+        {
+            enterState.GetComponent<Renderer>().material.color = wetColor; // change untilled soil to unwatered
+            tilledState.GetComponent<Renderer>().material.color = wetColor; // change tilled soil to unwatered
+        }
+    }
+    public void ResetPlot()
+    {
+        tilled = true; // set bool to indicate the soil has been tilled
+        plotFull = false; // set bool to indicate there is no longer a plant here
+        SoilDry(this.id);
+    }
+
+    private void SetTilled()
+    {
+        tilledState.SetActive(true); 
+        enterState.SetActive(false);
+    }
+    private void SetUntilled()
+    {
+        enterState.SetActive(true);
+        tilledState.SetActive(false);
     }
     private void OnDestroy()
     {

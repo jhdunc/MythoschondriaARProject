@@ -15,6 +15,7 @@ public class GameEvents : MonoBehaviour
     public event Action onSoilUpdate;
     public event Action<int> onSoilDry;
     public event Action onWatered;
+    public event Action onCheckRecipe;
 
     public event Action onTimeSkip;
     public void SoilDry(int id)
@@ -32,11 +33,11 @@ public class GameEvents : MonoBehaviour
         }
     }
 
-    public void TimeSkip()
+    public void CheckRecipe()
     {
-        if (onTimeSkip != null)
+        if (onCheckRecipe != null)
         {
-            onTimeSkip();
+            onCheckRecipe();
         }
     }
 
