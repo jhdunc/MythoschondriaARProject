@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab8fa5093529d3340b2c35c0ec55476d, type: 3}
-  m_Name: Popcorn
+  m_Name: GestampteAardappel
   m_EditorClassIdentifier: 
-  recipeName: Zoete Popcorn
+  recipeName: Gestampte aardappel
   ingredient:
-  - {fileID: 11400000, guid: ebe32cb90218c0741ad4aa8210c8ae18, type: 2}
-  - {fileID: 11400000, guid: 69d5467d63648de46870efa15a14f01f, type: 2}
-  quantity: 0200000000000000
+  - {fileID: 11400000, guid: 05a7854dab1433b4780369c12e06bdbc, type: 2}
+  quantity: 03000000

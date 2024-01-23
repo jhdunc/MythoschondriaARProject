@@ -341,7 +341,7 @@ MonoBehaviour:
   seeded: {fileID: 7425184390854342364}
   sprout: {fileID: 8951616297635374926}
   growing: {fileID: 6614388044839262708}
-  harvest: {fileID: 4592392743226272101}
+  harvest: {fileID: 7314462812566802359}
   timerPrefab: {fileID: 6107387598365131097, guid: f12567b2ec35e074e850c8fc05967ed2,
     type: 3}
   timer: {fileID: 8568768211222747933}
@@ -804,12 +804,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e99b1718ff18b5458bbea22fded7d70, type: 3}
---- !u!1 &4592392743226272101 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1144794793826238481, guid: 2e99b1718ff18b5458bbea22fded7d70,
-    type: 3}
-  m_PrefabInstance: {fileID: 3483626751877163380}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3814729697332638687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 335782468018412203, guid: 2e99b1718ff18b5458bbea22fded7d70,
