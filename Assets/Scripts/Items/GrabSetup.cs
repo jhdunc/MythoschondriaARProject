@@ -38,32 +38,18 @@ public class GrabSetup : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
 
         parent.GetComponent<PlantPrefabSettings>().harvestable.Remove(gameObject);
-        if (parent.GetComponent<PlantPrefabSettings>().harvestable.Count == 0)
-        {
-            //WORKING HERE
-        }
-
+        
         var vegToScale = this.gameObject.transform.GetChild(0);
         vegToScale.transform.localScale = grabbedScale;
 
-        DropObject();
-        Debug.Log("RanDrop!");
-
+        KillParent();
     }
 
-    private IEnumerator DropObject()
+    private void KillParent()
     {
-        
-        var grabCode = GetComponent<XRGrabInteractable>();
-
-        yield return new WaitForSeconds(2);
-        grabCode.enabled = false;
-        
-        DestroyHeld();
-        grabCode.enabled = true;
-
+        transform.SetParent(null);
         if (parent.GetComponent<PlantPrefabSettings>().harvestable.Count == 0)
-        { GameObject.Destroy(parent); }
+        { parent.GetComponent<PlantScript>().DestroyPlantPrefab(); }
     }
 
     private void DestroyHeld()

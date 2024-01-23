@@ -18,12 +18,6 @@ public class ItemDictionaries : MonoBehaviour
             gardenInventory.Add(item[i], 0);
             kitchenInventory.Add(item[i], 0);
         }
-
-/*      // How to print a list of each item in the inventory  
-        foreach (KeyValuePair<ItemClass, int> items in gardenInventory)
-        { print("You have " + items.Value + " " + items.Key); }
-*/
-
     }
 
     public void AddToGardenList(ItemClass item, int quantity) // method to call when adding idems to the inventory. This is used in RipeItem.cs for harvesting.
@@ -37,13 +31,6 @@ public class ItemDictionaries : MonoBehaviour
     }
     public void AddToKitchenList(ItemClass item, int quantity)
     {
-        // JEREMY
-        // CHAIRMEY
-        // CHAOIMAY
-        // CHOSENONE
-        // This is the code for make it all go away - referenced in RecipeClipboard.cs
-        // I think it works? maybe? give it a go.
-
         RemoveFromGardenList(item, quantity);
         kitchenInventory[item] += quantity;
     }
