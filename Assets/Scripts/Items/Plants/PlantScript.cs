@@ -16,7 +16,7 @@ public class PlantScript : MonoBehaviour
 
     private int idSoil; // parent ID (soil plot, used for wet/dry communication)
     [SerializeField] ItemClass itemInfo;
-
+    
     public GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
     // GameObject variables to hold the model for each growth state
@@ -24,7 +24,6 @@ public class PlantScript : MonoBehaviour
     public GameObject sprout;
     public GameObject growing;
     public GameObject harvest;
-    public ParticleSystem poof;
 
     [SerializeField] GameObject timerPrefab; // UI prefab for the timer bar
 
@@ -35,7 +34,6 @@ public class PlantScript : MonoBehaviour
     public float growTime; // how long it takes this plant to grow per state
 
     public bool growthActive = false; // read whether or not the plant is currently growing, default false
-
     void Start()
     {
         // set all objects to inactive at start 
@@ -60,22 +58,17 @@ public class PlantScript : MonoBehaviour
     void ChangeState(GrowthState newState) // a method to call when changing the plant's state. When called, will use one of the enum list things as the newState
     {
         currentState = newState; // set current state to the paramater used to call the method
-
-        Vector3 xyz = new Vector3(0, 90, 0);
-        Quaternion newRotation = Quaternion.Euler(xyz);
-        Instantiate(poof, this.transform.position, newRotation);
-
         switch (currentState) // use switch cases to determine behavior based on state.
         {
-            // each case sets the previous state as inactive and the new state as active 
+            // each case sets the previous state as inactive and the new state as active
             // it does this by comparing the case against the parameter newState
-            case GrowthState.Seeded:  // when this state is used as newState
-                seeded.SetActive(true); // sets the prefab for this state as active
-                growthActive = false; // not currently growing (requires water)
+            case GrowthState.Seeded: 
+                seeded.SetActive(true);
+                growthActive = false;
                 break;
             case GrowthState.Sprout:
                 sprout.SetActive(true);
-                sprout.transform.localScale = new Vector3(.4f, .4f, .4f); // make smol
+                sprout.transform.localScale = new Vector3(.4f, .4f, .4f);
                 growthActive = false;
                 break;
             case GrowthState.Growing:
@@ -95,7 +88,7 @@ public class PlantScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // on a collision with the trigger collision box, 
+        // on a collision with the soil's trigger collision box, 
         // if the game object has the tag "seed" or "Tool" 
         if (other.gameObject.tag == "seed" || other.gameObject.tag == "Tool")
         {
@@ -126,7 +119,7 @@ public class PlantScript : MonoBehaviour
                     case 102:
                         Debug.Log("Water has been used"); // debug to confirm Watering Can recognition working
                         if (!growthActive) // if the plant is not currently growing, then start growing.
-                            StartCoroutine(GrowthCycle()); // start coroutine that will change the growth state
+                        StartCoroutine(GrowthCycle()); // start coroutine that will change the growth state
                         break;
                 }
 
@@ -159,14 +152,17 @@ public class PlantScript : MonoBehaviour
             {
                 ChangeState(GrowthState.Harvest);
                 GameEvents.current.SoilDry(idSoil);
+
             }
         }
+
+
     }
     private void Update()
     {
-        if (growthActive) // if currently growing
+        if (growthActive)
         {
-            switch (currentState) // check what the current State is
+            switch (currentState)
             {
                 case GrowthState.Sprout:
                     if (sprout.transform.localScale.x < 1)
@@ -188,10 +184,10 @@ public class PlantScript : MonoBehaviour
         }
         if (currentState == GrowthState.Harvest && !hasParticle)
         {
-            GameObject newParticle = Instantiate(harvestTime, gameObject.transform, worldPositionStays: false); // added GameObject newParticle = to Kris' code
+            GameObject newParticle = Instantiate(harvestTime, new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z), Quaternion.identity);
             hasParticle = true;
 
-            newParticle.name = $"ShinyThing";
+            newParticle.name = "ShinyThing";
             shinyThing = GameObject.Find("ShinyThing").GetComponent<ParticleSystem>();
         }
         if (currentState == GrowthState.Harvest && hasParticle)
@@ -205,7 +201,4 @@ public class PlantScript : MonoBehaviour
     }
     public void StopParticle()
     { shinyThing.Stop(); }
-
-    public void DestroyPlantPrefab()
-    { Destroy(gameObject); }
 }
