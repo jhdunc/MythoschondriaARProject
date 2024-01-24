@@ -21,4 +21,10 @@ public class RipeItem : MonoBehaviour
         inventory.AddToGardenList(itemInfo, 1);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Terrain")
+        { Destroy(gameObject); }
+    }
+
 }

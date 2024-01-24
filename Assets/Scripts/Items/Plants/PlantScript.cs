@@ -16,7 +16,8 @@ public class PlantScript : MonoBehaviour
 
     private int idSoil; // parent ID (soil plot, used for wet/dry communication)
     [SerializeField] ItemClass itemInfo;
-    
+    public ParticleSystem poof;
+
     public GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
     // GameObject variables to hold the model for each growth state
@@ -58,6 +59,11 @@ public class PlantScript : MonoBehaviour
     void ChangeState(GrowthState newState) // a method to call when changing the plant's state. When called, will use one of the enum list things as the newState
     {
         currentState = newState; // set current state to the paramater used to call the method
+        Vector3 xyz = new Vector3(0, 90, 0);
+        Quaternion newRotation = Quaternion.Euler(xyz);
+        Vector3 offestPos = new Vector3(0, .05f, 0);
+        Instantiate(poof, this.transform.position + offestPos, newRotation);
+        /*Instantiate(poof, this.transform.position, newRotation);*/
         switch (currentState) // use switch cases to determine behavior based on state.
         {
             // each case sets the previous state as inactive and the new state as active
@@ -182,7 +188,7 @@ public class PlantScript : MonoBehaviour
                     break;
             }
         }
-        if (currentState == GrowthState.Harvest && !hasParticle)
+/*        if (currentState == GrowthState.Harvest && !hasParticle)
         {
             GameObject newParticle = Instantiate(harvestTime, new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z), Quaternion.identity);
             hasParticle = true;
@@ -197,8 +203,13 @@ public class PlantScript : MonoBehaviour
         if (hasParticle && currentState != GrowthState.Harvest)
         {
             shinyThing.Stop();
-        }
+        }*/
     }
     public void StopParticle()
     { shinyThing.Stop(); }
+
+    public void DestroyPlantPrefab()
+    {
+        Destroy(gameObject);
+    }
 }

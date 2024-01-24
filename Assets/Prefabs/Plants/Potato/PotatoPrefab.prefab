@@ -53,12 +53,12 @@ MonoBehaviour:
   harvestTime: {fileID: 7106538313101683207, guid: 4a67fcedff884d2439b003c06f0ab1cc,
     type: 3}
   itemInfo: {fileID: 11400000, guid: 05a7854dab1433b4780369c12e06bdbc, type: 2}
+  poof: {fileID: 8508008252628341059, guid: 0a3e75eb97932ad4f85739f84630eede, type: 3}
   currentState: 0
   seeded: {fileID: 100476211844003888}
   sprout: {fileID: 1971335173471445694}
   growing: {fileID: 7066139304494901409}
   harvest: {fileID: 1642357707577544952}
-  poof: {fileID: 8508008252628341059, guid: 0a3e75eb97932ad4f85739f84630eede, type: 3}
   timerPrefab: {fileID: 6107387598365131097, guid: f12567b2ec35e074e850c8fc05967ed2,
     type: 3}
   timer: {fileID: 5623632258374129370}
@@ -182,12 +182,27 @@ PrefabInstance:
     - target: {fileID: 2121143433624219159, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0376
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2121143433624219159, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639902849563425431, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639902849563425431, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639902849563425431, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3639902849563425431, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
         type: 3}
@@ -197,7 +212,7 @@ PrefabInstance:
     - target: {fileID: 3639902849563425431, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0038
+      value: -0.0036
       objectReference: {fileID: 0}
     - target: {fileID: 3639902849563425431, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
         type: 3}
