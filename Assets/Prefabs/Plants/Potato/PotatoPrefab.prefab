@@ -109,6 +109,12 @@ PrefabInstance:
       propertyPath: grabSize
       value: 2.2
       objectReference: {fileID: 0}
+    - target: {fileID: 408557938505184223, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
+        type: 3}
+      propertyPath: poof
+      value: 
+      objectReference: {fileID: 8508008252628341057, guid: 0a3e75eb97932ad4f85739f84630eede,
+        type: 3}
     - target: {fileID: 522508645399888673, guid: b71d5d29c8138044a9754fb6cb7c1f5f,
         type: 3}
       propertyPath: m_RootOrder

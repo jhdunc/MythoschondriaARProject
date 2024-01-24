@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harvestable:
-  - {fileID: 0}
+  - {fileID: 4797067580665294456}
 --- !u!1001 &5334161297628871832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3665e8a804dd924192aa4fa05ad4825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabSize: 1.6
+  grabSize: 1.1
   unGrabbed: 0
   parent: {fileID: 8619039765839263169}
 --- !u!114 &7543419152662242679
@@ -900,3 +900,4 @@ MonoBehaviour:
   inventory: {fileID: 0}
   itemInfo: {fileID: 11400000, guid: 48d6767a2a15c44469e8e12d52b796e1, type: 2}
   setup: {fileID: 3488194039937303866}
+  poof: {fileID: 8508008252628341057, guid: 0a3e75eb97932ad4f85739f84630eede, type: 3}

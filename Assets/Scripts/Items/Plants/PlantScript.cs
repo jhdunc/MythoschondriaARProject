@@ -45,7 +45,6 @@ public class PlantScript : MonoBehaviour
         harvest.SetActive(false);
 
         idSoil = transform.parent.GetComponent<SoilScript>().id;
-        Debug.Log("Parent ID = " + idSoil);
 
         ChangeState(GrowthState.Seeded); // when instantiated, change growth state to Seeded
 
@@ -115,15 +114,12 @@ public class PlantScript : MonoBehaviour
                 switch (saveItemID)
                 {
                     case 100: // if item is a Hoe:
-                        Debug.Log("Hoe has been used"); // debug to confirm Hoe recognition working
                         Destroy(gameObject); // destroy this game object 
                         break;
                     case 101: // if item is a Trowel:
-                        Debug.Log("Trowel has been used"); // debug to confirm Trowel recognition working
                         Destroy(gameObject); // destroy this game object
                         break;
                     case 102:
-                        Debug.Log("Water has been used"); // debug to confirm Watering Can recognition working
                         if (!growthActive) // if the plant is not currently growing, then start growing.
                         StartCoroutine(GrowthCycle()); // start coroutine that will change the growth state
                         break;

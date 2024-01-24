@@ -63,7 +63,6 @@ public class SoilScript : MonoBehaviour
                 switch (saveItemID)
                 {
                     case 100: // if item is a Hoe:
-                        Debug.Log("Hoe has been used"); // debug to confirm Hoe recognition working
                         FindObjectOfType<AudioManager>().Play("Dig"); // digging SFX plays
                         SetTilled(); // change game object to tilled
 
@@ -74,7 +73,6 @@ public class SoilScript : MonoBehaviour
                         break;
 
                     case 101: // if item is a Trowel
-                        Debug.Log("Trowel has been used"); // debug to confirm Trowel recognition working
                         FindObjectOfType<AudioManager>().Play("Dig"); //digging SFX plays
                         SetTilled();
 
@@ -86,7 +84,6 @@ public class SoilScript : MonoBehaviour
                         break;
 
                     case 102: // if item is a Watering Can
-                        Debug.Log("Water has been used"); // debug to confirm WateringCan recognition working
                         SoilWet(this.id); //  call method to make soil Wet
                         break;
                 }
