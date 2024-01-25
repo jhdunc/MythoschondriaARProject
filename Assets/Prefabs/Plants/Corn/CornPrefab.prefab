@@ -49,12 +49,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d95a0bc5c0f2f4496b79099d29036d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvestTime: {fileID: 0}
+  itemInfo: {fileID: 0}
+  currentState: 0
   seeded: {fileID: 7445095626789074960}
   sprout: {fileID: 3752846496973414412}
   growing: {fileID: 6738210703200208570}
   harvest: {fileID: 6789821229935236985}
+  poof: {fileID: 8508008252628341059, guid: 0a3e75eb97932ad4f85739f84630eede, type: 3}
   timerPrefab: {fileID: 3931645954928585085}
   timer: {fileID: 3931645954928585024}
+  growTomaat: {fileID: 0}
   growTime: 5
   growthActive: 0
 --- !u!135 &3610904882832718336

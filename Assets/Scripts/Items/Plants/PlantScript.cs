@@ -24,6 +24,7 @@ public class PlantScript : MonoBehaviour
     public GameObject sprout;
     public GameObject growing;
     public GameObject harvest;
+    public ParticleSystem poof;
 
     [SerializeField] GameObject timerPrefab; // UI prefab for the timer bar
 
@@ -34,6 +35,7 @@ public class PlantScript : MonoBehaviour
     public float growTime; // how long it takes this plant to grow per state
 
     public bool growthActive = false; // read whether or not the plant is currently growing, default false
+
     void Start()
     {
         // set all objects to inactive at start 
@@ -58,6 +60,11 @@ public class PlantScript : MonoBehaviour
     void ChangeState(GrowthState newState) // a method to call when changing the plant's state. When called, will use one of the enum list things as the newState
     {
         currentState = newState; // set current state to the paramater used to call the method
+
+        Vector3 xyz = new Vector3(0, 90, 0);
+        Quaternion newRotation = Quaternion.Euler(xyz);
+        Instantiate(poof, this.transform.position, newRotation);
+
         switch (currentState) // use switch cases to determine behavior based on state.
         {
             // each case sets the previous state as inactive and the new state as active
