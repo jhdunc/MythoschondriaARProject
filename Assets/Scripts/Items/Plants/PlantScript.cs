@@ -16,7 +16,8 @@ public class PlantScript : MonoBehaviour
 
     private int idSoil; // parent ID (soil plot, used for wet/dry communication)
     [SerializeField] ItemClass itemInfo;
-    public ParticleSystem poof;
+    public GameObject poofPrefab;
+    GameObject poofPart;
 
     public GrowthState currentState; // variable to hold information on plant's current state (from the enum list)
 
@@ -61,8 +62,9 @@ public class PlantScript : MonoBehaviour
         Vector3 xyz = new Vector3(0, 90, 0);
         Quaternion newRotation = Quaternion.Euler(xyz);
         Vector3 offestPos = new Vector3(0, .05f, 0);
-        Instantiate(poof, this.transform.position + offestPos, newRotation);
-        /*Instantiate(poof, this.transform.position, newRotation);*/
+        poofPart = Instantiate(poofPrefab, this.transform.position + offestPos, newRotation);
+        StartCoroutine(DestroyParticle());
+        
         switch (currentState) // use switch cases to determine behavior based on state.
         {
             // each case sets the previous state as inactive and the new state as active
@@ -184,26 +186,33 @@ public class PlantScript : MonoBehaviour
                     break;
             }
         }
-/*        if (currentState == GrowthState.Harvest && !hasParticle)
-        {
-            GameObject newParticle = Instantiate(harvestTime, new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z), Quaternion.identity);
-            hasParticle = true;
+        #region Item Ready Particle
+        /*        if (currentState == GrowthState.Harvest && !hasParticle)
+                {
+                    GameObject newParticle = Instantiate(harvestTime, new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z), Quaternion.identity);
+                    hasParticle = true;
 
-            newParticle.name = "ShinyThing";
-            shinyThing = GameObject.Find("ShinyThing").GetComponent<ParticleSystem>();
-        }
-        if (currentState == GrowthState.Harvest && hasParticle)
-        {
-            shinyThing.Play();
-        }
-        if (hasParticle && currentState != GrowthState.Harvest)
-        {
-            shinyThing.Stop();
-        }*/
+                    newParticle.name = "ShinyThing";
+                    shinyThing = GameObject.Find("ShinyThing").GetComponent<ParticleSystem>();
+                }
+                if (currentState == GrowthState.Harvest && hasParticle)
+                {
+                    shinyThing.Play();
+                }
+                if (hasParticle && currentState != GrowthState.Harvest)
+                {
+                    shinyThing.Stop();
+                }*/
+        #endregion
     }
     public void StopParticle()
     { shinyThing.Stop(); }
 
+    public IEnumerator DestroyParticle()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(poofPart);
+    }
     public void DestroyPlantPrefab()
     {
         Destroy(gameObject);

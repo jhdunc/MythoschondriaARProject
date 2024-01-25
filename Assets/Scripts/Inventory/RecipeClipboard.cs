@@ -72,7 +72,8 @@ public class RecipeClipboard : MonoBehaviour
                     {
                         trueCount += 1;
                         if (trueCount == recipe.ingredient.Count)
-                        { kitchenButton.interactable = true; }
+                        { kitchenButton.interactable = true;
+                            Debug.Log("counter" + trueCount); }
                         else { kitchenButton.interactable = false; }
                     }
                 }
@@ -82,6 +83,7 @@ public class RecipeClipboard : MonoBehaviour
 
     public void SendToKitchen() // method to call via button
     {
+        CheckRecipe();
         var item = recipe.ingredient; // local variable to make the loop below look neater
         var qty = recipe.quantity; // local variable to make the loop below look neater
 
@@ -89,7 +91,7 @@ public class RecipeClipboard : MonoBehaviour
         {
             inventory.AddToKitchenList(item[i], qty[i]); // call method from ItemDictionaries.cs
         }
-        CheckRecipe();
+        
     }
     private void OnDestroy()
     {

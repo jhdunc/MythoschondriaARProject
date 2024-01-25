@@ -54,7 +54,8 @@ MonoBehaviour:
   harvestTime: {fileID: 7106538313101683207, guid: 4a67fcedff884d2439b003c06f0ab1cc,
     type: 3}
   itemInfo: {fileID: 11400000, guid: fdaa9292f29fe604ab2684e5ca517c30, type: 2}
-  poof: {fileID: 8508008252628341059, guid: 0a3e75eb97932ad4f85739f84630eede, type: 3}
+  poofPrefab: {fileID: 8508008252628341057, guid: 0a3e75eb97932ad4f85739f84630eede,
+    type: 3}
   currentState: 0
   seeded: {fileID: 8705439083146477799}
   sprout: {fileID: 959853897036329514}

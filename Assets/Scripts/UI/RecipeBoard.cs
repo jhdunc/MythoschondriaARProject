@@ -32,6 +32,7 @@ public class RecipeBoard : MonoBehaviour
         if (currentRecipe < (recipe.Length -1)) // check recipe page against total number of recipes
         {
             currentRecipe += 1;
+            recipe[currentRecipe].GetComponent<RecipeClipboard>().CheckRecipe();
             recipe[currentRecipe].SetActive(true);
         }
         else // if it is the last recipe page, reset to the first page
