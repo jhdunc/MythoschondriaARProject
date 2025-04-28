@@ -19,7 +19,11 @@ EditorBuildSettings:
       type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba,
       type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: c7299c333454570468aac8a9da76145a,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 73706e4813d3d0a4989aa2afae4a80ff,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 676878c31653a174e9165c5ff9089402,
       type: 2}

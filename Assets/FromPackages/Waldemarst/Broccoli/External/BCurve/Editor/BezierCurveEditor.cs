@@ -1172,7 +1172,7 @@ namespace Broccoli.Utils
                         int hotControl = GUIUtility.hotControl;
                         Handles.color = selectedNodeColor;
                         if (rayDragEnabled) {
-                            newPosition = Handles.FreeMoveHandle (s_tmpNode, Quaternion.identity, handleSize * nodeSize, Vector3.zero, selectedNodeDrawFunction);
+                            var fmh_1175_78_638814333849396738 = Quaternion.identity; newPosition = Handles.FreeMoveHandle (s_tmpNode, handleSize * nodeSize, Vector3.zero, selectedNodeDrawFunction);
                         } else {
                             newPosition = Handles.PositionHandle (s_tmpNode, Quaternion.identity);
                             FreeMoveHandle (ctrlId, s_tmpNode, Quaternion.identity, handleSize * nodeSize,
@@ -1329,9 +1329,8 @@ namespace Broccoli.Utils
         void DrawBezierNodeHandle1 (BezierNode node, int index, Vector3 sceneOffset, float scale, bool isLastNode) {
             int hotControl = GUIUtility.hotControl;
             s_tmpHandle1 = node.globalHandle1 * scale + sceneOffset;
-            Vector3 newGlobal1 = Handles.FreeMoveHandle (
+            var fmh_1334_17_638814333849431452 = Quaternion.identity; Vector3 newGlobal1 = Handles.FreeMoveHandle (
                 s_tmpHandle1, 
-                Quaternion.identity, 
                 HandleUtility.GetHandleSize (s_tmpHandle1) * nodeHandleSize, 
                 Vector3.zero, 
                 node.isSelected?selectedNodeHandleDrawFunction:nodeHandleDrawFunction);
@@ -1370,9 +1369,8 @@ namespace Broccoli.Utils
         void DrawBezierNodeHandle2 (BezierNode node, int index, Vector3 sceneOffset, float scale, bool isLastNode) {
             int hotControl = GUIUtility.hotControl;
             s_tmpHandle2 = node.globalHandle2 * scale + sceneOffset;
-            Vector3 newGlobal2 = Handles.FreeMoveHandle(
+            var fmh_1375_17_638814333849435839 = Quaternion.identity; Vector3 newGlobal2 = Handles.FreeMoveHandle(
                 s_tmpHandle2, 
-                Quaternion.identity, 
                 HandleUtility.GetHandleSize (s_tmpHandle2) * nodeHandleSize, 
                 Vector3.zero, 
                 node.isSelected?selectedNodeHandleDrawFunction:nodeHandleDrawFunction);
